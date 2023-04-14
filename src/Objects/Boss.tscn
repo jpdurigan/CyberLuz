@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "New Anim",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "death",
+"speed": 5.0
+} ]
+
+[node name="Boss" type="KinematicBody2D"]
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+position = Vector2( 810.696, 188.638 )
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 1 )
+animation = "death"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]

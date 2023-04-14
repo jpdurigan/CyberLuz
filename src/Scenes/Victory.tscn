@@ -1,0 +1,111 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Assets/UI/Victory/TV_2.png" type="Texture" id=1]
+[ext_resource path="res://Assets/UI/Victory/TV_1.png" type="Texture" id=2]
+[ext_resource path="res://Assets/UI/Victory/InicioButton.png" type="Texture" id=3]
+[ext_resource path="res://Assets/UI/Victory/InicioButtonPressed.png" type="Texture" id=4]
+[ext_resource path="res://Assets/UI/Victory/TV_3.png" type="Texture" id=5]
+[ext_resource path="res://Scripts/Victory.gd" type="Script" id=6]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 1 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="StyleBoxTexture" id=2]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 1181, 452 )
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 1 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+margin_right = 1030.0
+margin_bottom = 604.0
+color = Color( 0, 0, 0, 0.4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="animado" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="animado"]
+visible = false
+margin_right = 1030.0
+margin_bottom = 604.0
+color = Color( 0, 0, 0, 0.4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="animado"]
+visible = false
+position = Vector2( 512.5, 300.5 )
+scale = Vector2( 0.531016, 0.462602 )
+frames = SubResource( 1 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+margin_left = 17.0
+margin_top = 17.0
+margin_right = 1887.0
+margin_bottom = 1247.0
+rect_scale = Vector2( 0.531, 0.462 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="TextureRect"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -104.491
+margin_top = -346.883
+margin_right = 912.509
+margin_bottom = 109.117
+rect_scale = Vector2( 0.2, 0.2 )
+custom_styles/pressed = SubResource( 2 )
+icon = ExtResource( 3 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 513, 301 )
+scale = Vector2( 0.531, 0.462 )
+frames = SubResource( 3 )
+frame = 2
+playing = true
+
+[node name="TextureButton" type="TextureButton" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -48.0
+margin_top = -160.0
+margin_right = 957.0
+margin_bottom = 290.0
+rect_scale = Vector2( 0.1, 0.1 )
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="button_down" from="TextureRect/Button" to="." method="_on_Button_button_down"]

@@ -1,0 +1,1 @@
+CyberLuz é um jogo top down, bullet hell, ambientado numa releitura de bairros de Fortaleza num futuro distópico na estética Cyber Agreste.

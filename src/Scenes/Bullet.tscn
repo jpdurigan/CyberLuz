@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Bullet2.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Sprites/Player/bala.png" type="Texture" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 19.532
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 39.8598
+
+[node name="KinematicBody2D" type="KinematicBody2D" groups=["Gun"]]
+scale = Vector2( 0.5, 0.5 )
+collision_layer = 2
+collision_mask = 2
+script = ExtResource( 1 )
+bullet_speed = 300
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2( 0.5, 0.5 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0.198425, -0.396851 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 2 )
+
+[node name="Area2D" type="Area2D" parent="."]
+scale = Vector2( 0.5, 0.5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2( 0.5, 0.5 )
+shape = SubResource( 2 )
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
