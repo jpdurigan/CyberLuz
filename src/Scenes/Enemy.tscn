@@ -11,7 +11,7 @@
 [ext_resource path="res://Assets/Sprites/Enemies/AlienCorrendo/AC_2.png" type="Texture" id=9]
 [ext_resource path="res://Assets/Sprites/Enemies/AlienDano/AD_2.png" type="Texture" id=10]
 [ext_resource path="res://Scripts/Enemy.gd" type="Script" id=11]
-[ext_resource path="res://Assets/Sprites/Player/sombra.png" type="Texture" id=12]
+[ext_resource path="res://Player/images/sombra.png" type="Texture" id=12]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {

@@ -4,7 +4,7 @@
 [ext_resource path="res://Assets/Sprites/Boss/Mothership.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Sprites/Boss/kill/nave_kill.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Sprites/Boss/smoke2.png" type="Texture" id=4]
-[ext_resource path="res://Assets/Sprites/Player/sombra.png" type="Texture" id=5]
+[ext_resource path="res://Player/images/sombra.png" type="Texture" id=5]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 233.43
