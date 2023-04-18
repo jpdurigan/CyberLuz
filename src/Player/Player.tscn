@@ -21,10 +21,6 @@
 [ext_resource path="res://components/shooter/PlayerShooter.gd" type="Script" id=19]
 [ext_resource path="res://player/images/sombra.png" type="Texture" id=21]
 
-[sub_resource type="CapsuleShape2D" id=14]
-radius = 50.0
-height = 84.0
-
 [sub_resource type="SpriteFrames" id=19]
 animations = [ {
 "frames": [ ExtResource( 17 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 16 ) ],
@@ -572,21 +568,16 @@ node_connections = [ "output", 0, "state_machine" ]
 [sub_resource type="CircleShape2D" id=18]
 radius = 30.0167
 
+[sub_resource type="CapsuleShape2D" id=14]
+radius = 50.0
+height = 84.0
+
 [node name="Player" type="KinematicBody2D"]
 collision_layer = 2
 script = ExtResource( 2 )
 speed_max = 300.0
 speed_min = 60.0
 accerelation = 360.0
-
-[node name="PlayerHit" type="Area2D" parent="."]
-visible = false
-collision_layer = 16
-collision_mask = 0
-
-[node name="Hit" type="CollisionShape2D" parent="PlayerHit"]
-position = Vector2( 0, -72 )
-shape = SubResource( 14 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0, -91 )
@@ -613,6 +604,7 @@ parameters/state_machine/idle/blend_position = 0
 parameters/state_machine/walk/blend_position = Vector2( 0.00226247, 0.0337553 )
 
 [node name="Collider" type="CollisionShape2D" parent="."]
+modulate = Color( 0.0352941, 1, 0.352941, 1 )
 shape = SubResource( 18 )
 
 [node name="Shooter" parent="." instance=ExtResource( 18 )]
@@ -622,6 +614,15 @@ script = ExtResource( 19 )
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.1
 autostart = true
+
+[node name="PlayerHit" type="Area2D" parent="."]
+modulate = Color( 1, 0, 0, 1 )
+collision_layer = 16
+collision_mask = 0
+
+[node name="Hit" type="CollisionShape2D" parent="PlayerHit"]
+position = Vector2( 0, -72 )
+shape = SubResource( 14 )
 
 [node name="Shadow" type="Sprite" parent="."]
 scale = Vector2( 0.252381, 0.22619 )

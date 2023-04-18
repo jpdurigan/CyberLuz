@@ -37,8 +37,9 @@ func _move():
 		_animation_state_machine.travel("walk")
 		
 		_speed_current += accerelation * get_physics_process_delta_time()
-		_speed_current *= min(input_direction.length_squared() / slow_radius, 1.0)
+		_speed_current *= min(global_position.distance_to(target) / slow_radius, 1.0)
 		_speed_current = min(_speed_current, speed_max)
+		printt(accerelation, global_position.distance_to(target) / slow_radius, _speed_current)
 	else:
 		_animation_state_machine.travel("idle")
 		_speed_current = 0.0
