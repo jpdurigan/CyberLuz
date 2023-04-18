@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=2]
+[gd_scene load_steps=49 format=2]
 
 [ext_resource path="res://Player/images/walking_left/walking_left_1.png" type="Texture" id=1]
 [ext_resource path="res://Player/Player.gd" type="Script" id=2]
@@ -17,9 +17,8 @@
 [ext_resource path="res://Player/images/walking_front/walking_front_2.png" type="Texture" id=15]
 [ext_resource path="res://Player/images/damage/damage_2.png" type="Texture" id=16]
 [ext_resource path="res://Player/images/damage/damage_1.png" type="Texture" id=17]
-[ext_resource path="res://Player/images/right-arrow.png" type="Texture" id=18]
-[ext_resource path="res://Player/Shooter.gd" type="Script" id=19]
-[ext_resource path="res://Objects/Bullet.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Objects/Shooter/Shooter.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Objects/Shooter/PlayerShooter.gd" type="Script" id=19]
 [ext_resource path="res://Player/images/sombra.png" type="Texture" id=21]
 
 [sub_resource type="CapsuleShape2D" id=14]
@@ -616,18 +615,9 @@ parameters/state_machine/walk/blend_position = Vector2( 0.00226247, 0.0337553 )
 [node name="Collider" type="CollisionShape2D" parent="."]
 shape = SubResource( 18 )
 
-[node name="Shooter" type="Position2D" parent="."]
+[node name="Shooter" parent="." instance=ExtResource( 18 )]
 position = Vector2( 0, -75 )
 script = ExtResource( 19 )
-bullet_scene = ExtResource( 20 )
-
-[node name="Right-arrow" type="Sprite" parent="Shooter"]
-position = Vector2( 60, 0 )
-scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 18 )
-
-[node name="Timer" type="Timer" parent="Shooter"]
-one_shot = true
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.1

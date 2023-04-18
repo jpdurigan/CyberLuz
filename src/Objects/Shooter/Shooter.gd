@@ -1,7 +1,10 @@
+class_name Shooter
 extends Node2D
 
 export var bullet_scene: PackedScene
 export var rate: float = 2
+
+var target: Vector2
 
 onready var _timer: Timer = $Timer
 
@@ -9,15 +12,13 @@ onready var _timer: Timer = $Timer
 func _ready():
 	_timer.connect("timeout", self, "_on_timer_timeout")
 
-func _unhandled_input(event):
-	if event.is_action_pressed("shoot") and _can_shoot():
-		_shoot()
-
 func _physics_process(delta):
 	_aim()
+	if _should_shoot():
+		_shoot()
 
 
-func _can_shoot() -> bool:
+func _should_shoot() -> bool:
 	return _timer.time_left == 0
 
 func _get_wait_time() -> float:
@@ -25,7 +26,7 @@ func _get_wait_time() -> float:
 
 
 func _aim():
-	look_at(get_global_mouse_position())
+	look_at(target)
 
 func _shoot():
 	var bullet: Node2D = bullet_scene.instance()
@@ -38,5 +39,5 @@ func _shoot():
 
 
 func _on_timer_timeout():
-	if Input.is_action_pressed("shoot"):
+	if _should_shoot():
 		_shoot()
