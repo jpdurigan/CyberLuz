@@ -12,12 +12,12 @@ _global_script_classes=[ {
 "base": "KinematicBody2D",
 "class": "Player",
 "language": "GDScript",
-"path": "res://Player/Player.gd"
+"path": "res://player/Player.gd"
 }, {
 "base": "Node2D",
 "class": "Shooter",
 "language": "GDScript",
-"path": "res://Objects/Shooter/Shooter.gd"
+"path": "res://components/shooter/Shooter.gd"
 } ]
 _global_script_class_icons={
 "Player": "",

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/AA_3.png-23f3fa4d150432d07a0c50d3853b6c89.stex"
+path="res://.import/alien_damage_2.png-8268280ef96771ff8cdf383047dc77bb.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Enemies/AlienAtaque/AA_3.png"
-dest_files=[ "res://.import/AA_3.png-23f3fa4d150432d07a0c50d3853b6c89.stex" ]
+source_file="res://enemies/alien/images/damage/alien_damage_2.png"
+dest_files=[ "res://.import/alien_damage_2.png-8268280ef96771ff8cdf383047dc77bb.stex" ]
 
 [params]
 

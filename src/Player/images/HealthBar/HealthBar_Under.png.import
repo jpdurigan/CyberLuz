@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/HealthBar_Under.png-4c0727231ff37716bef009c2a3c8f3ce.stex"
+path="res://.import/HealthBar_Under.png-84997d432861d65ee74e72c48f03e6c2.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/images/HealthBar/HealthBar_Under.png"
-dest_files=[ "res://.import/HealthBar_Under.png-4c0727231ff37716bef009c2a3c8f3ce.stex" ]
+source_file="res://player/images/HealthBar/HealthBar_Under.png"
+dest_files=[ "res://.import/HealthBar_Under.png-84997d432861d65ee74e72c48f03e6c2.stex" ]
 
 [params]
 

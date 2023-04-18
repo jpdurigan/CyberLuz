@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/walking_front_3.png-ce2c1d71b46253413b7df063c2f23b12.stex"
+path="res://.import/walking_front_3.png-2e60d94d230b6c75ef208e3734d1938b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/images/walking_front/walking_front_3.png"
-dest_files=[ "res://.import/walking_front_3.png-ce2c1d71b46253413b7df063c2f23b12.stex" ]
+source_file="res://player/images/walking_front/walking_front_3.png"
+dest_files=[ "res://.import/walking_front_3.png-2e60d94d230b6c75ef208e3734d1938b.stex" ]
 
 [params]
 

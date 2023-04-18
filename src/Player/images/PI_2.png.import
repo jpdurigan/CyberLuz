@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/PI_2.png-57901fe5a24f4db6abbb28519d22ab14.stex"
+path="res://.import/PI_2.png-6f0d4264d7213a09e858a3e464f6a92a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/images/PI_2.png"
-dest_files=[ "res://.import/PI_2.png-57901fe5a24f4db6abbb28519d22ab14.stex" ]
+source_file="res://player/images/PI_2.png"
+dest_files=[ "res://.import/PI_2.png-6f0d4264d7213a09e858a3e464f6a92a.stex" ]
 
 [params]
 

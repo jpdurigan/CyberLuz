@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/shooting_right_2.png-d08dacb7de433f5c122e5f3438ac5dbc.stex"
+path="res://.import/shooting_right_2.png-19e5b5ca6f00be654ff8139365236430.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/images/shooting_right/shooting_right_2.png"
-dest_files=[ "res://.import/shooting_right_2.png-d08dacb7de433f5c122e5f3438ac5dbc.stex" ]
+source_file="res://player/images/shooting_right/shooting_right_2.png"
+dest_files=[ "res://.import/shooting_right_2.png-19e5b5ca6f00be654ff8139365236430.stex" ]
 
 [params]
 

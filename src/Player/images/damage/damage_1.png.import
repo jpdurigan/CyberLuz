@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/damage_1.png-bcd0c1cc0ad8ef544c8c2eedf3da1bb3.stex"
+path="res://.import/damage_1.png-d955f22f435e234d4be4d5b7aaba0225.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/images/damage/damage_1.png"
-dest_files=[ "res://.import/damage_1.png-bcd0c1cc0ad8ef544c8c2eedf3da1bb3.stex" ]
+source_file="res://player/images/damage/damage_1.png"
+dest_files=[ "res://.import/damage_1.png-d955f22f435e234d4be4d5b7aaba0225.stex" ]
 
 [params]
 

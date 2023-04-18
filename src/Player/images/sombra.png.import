@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/sombra.png-3623e50638a0d04dc93a1ff95745f9ce.stex"
+path="res://.import/sombra.png-56c4c6116c7414478f8c0fa5ad65de1a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/images/sombra.png"
-dest_files=[ "res://.import/sombra.png-3623e50638a0d04dc93a1ff95745f9ce.stex" ]
+source_file="res://player/images/sombra.png"
+dest_files=[ "res://.import/sombra.png-56c4c6116c7414478f8c0fa5ad65de1a.stex" ]
 
 [params]
 

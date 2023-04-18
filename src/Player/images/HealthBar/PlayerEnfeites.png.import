@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/PlayerEnfeites.png-62e74b2b2710d3bc719b23e01464b96e.stex"
+path="res://.import/PlayerEnfeites.png-08ec12c27dbe4b7c64aa252867ced2e2.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/images/HealthBar/PlayerEnfeites.png"
-dest_files=[ "res://.import/PlayerEnfeites.png-62e74b2b2710d3bc719b23e01464b96e.stex" ]
+source_file="res://player/images/HealthBar/PlayerEnfeites.png"
+dest_files=[ "res://.import/PlayerEnfeites.png-08ec12c27dbe4b7c64aa252867ced2e2.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/cang.png-dcf9373bc7063d9f7908555f00596336.stex"
+path="res://.import/cang.png-0e92092db5a3209014c881dcae7a7561.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/images/cang.png"
-dest_files=[ "res://.import/cang.png-dcf9373bc7063d9f7908555f00596336.stex" ]
+source_file="res://player/images/cang.png"
+dest_files=[ "res://.import/cang.png-0e92092db5a3209014c881dcae7a7561.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/AD_2.png-aab458f69a7bc4261c69caa5b1e14108.stex"
+path="res://.import/alien_walk_3.png-653444fc2f6377c2d7f9498f9553652b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Enemies/AlienDano/AD_2.png"
-dest_files=[ "res://.import/AD_2.png-aab458f69a7bc4261c69caa5b1e14108.stex" ]
+source_file="res://enemies/alien/images/walk/alien_walk_3.png"
+dest_files=[ "res://.import/alien_walk_3.png-653444fc2f6377c2d7f9498f9553652b.stex" ]
 
 [params]
 

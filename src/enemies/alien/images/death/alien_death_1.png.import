@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/AD_1.png-3ff2e419148c94ce98070230a3fa50e9.stex"
+path="res://.import/alien_death_1.png-6b6c66ad3d566f79603f0bf63f6ff620.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Enemies/AlienDano/AD_1.png"
-dest_files=[ "res://.import/AD_1.png-3ff2e419148c94ce98070230a3fa50e9.stex" ]
+source_file="res://enemies/alien/images/death/alien_death_1.png"
+dest_files=[ "res://.import/alien_death_1.png-6b6c66ad3d566f79603f0bf63f6ff620.stex" ]
 
 [params]
 

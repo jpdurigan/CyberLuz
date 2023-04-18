@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Objects/Bullet.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Objects/Shooter/Shooter.gd" type="Script" id=2]
-[ext_resource path="res://Player/images/right-arrow.png" type="Texture" id=3]
+[ext_resource path="res://components/Bullet.tscn" type="PackedScene" id=1]
+[ext_resource path="res://components/shooter/Shooter.gd" type="Script" id=2]
+[ext_resource path="res://player/images/right-arrow.png" type="Texture" id=3]
 
 [node name="Shooter" type="Position2D"]
 script = ExtResource( 2 )
