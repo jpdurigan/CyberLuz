@@ -12,7 +12,7 @@
 [ext_resource path="res://enemies/alien/images/walk/alien_walk_1.png" type="Texture" id=10]
 [ext_resource path="res://enemies/alien/Alien.gd" type="Script" id=11]
 [ext_resource path="res://components/state_machine/StateMachine.gd" type="Script" id=12]
-[ext_resource path="res://components/state_machine/AutoForwardState.gd" type="Script" id=13]
+[ext_resource path="res://enemies/alien/states/Wander.gd" type="Script" id=13]
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -533,6 +533,7 @@ anims/walk_right = SubResource( 5 )
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource( 25 )
 anim_player = NodePath("../AnimationPlayer")
+active = true
 parameters/state_machine/playback = SubResource( 26 )
 parameters/state_machine/damage/blend_position = 0.225653
 parameters/state_machine/idle/blend_position = 0
@@ -545,6 +546,11 @@ shape = SubResource( 29 )
 
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource( 12 )
+start_node_path = NodePath("Wander")
 
-[node name="State" type="Node" parent="StateMachine"]
+[node name="Wander" type="Node" parent="StateMachine"]
 script = ExtResource( 13 )
+wander_radius = 320.0
+
+[node name="Timer" type="Timer" parent="StateMachine/Wander"]
+one_shot = true
