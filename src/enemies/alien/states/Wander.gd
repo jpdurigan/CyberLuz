@@ -5,32 +5,30 @@ export var wait_time: float = 3.0
 export(float, 0.0, 1.0, 0.1) var wait_randomness: float = 0.2
 
 export var player_area_path: NodePath
-onready var _player_area: Area2D = get_node(player_area_path)
+onready var _player_area: DetectionArea = get_node(player_area_path)
 
 var _target: Vector2
 
 onready var _timer : Timer = $Timer
-onready var _alien : KinematicBody2D = owner as KinematicBody2D
+onready var _alien : Enemy = owner as KinematicBody2D
 onready var _initial_position : Vector2 = _alien.global_position
 
 
-func _ready():
-	_timer.connect("timeout", self, "_on_timer_timeout")
-
-
 func enter(msg: Dictionary) -> void:
+	_timer.connect("timeout", self, "_on_timer_timeout")
+	_player_area.connect("player_entered", self, "_on_player_area_player_entered")
 	_pick_new_target()
+
+func exit() -> Dictionary:
+	_timer.disconnect("timeout", self, "_on_timer_timeout")
+	_player_area.disconnect("player_entered", self, "_on_player_area_player_entered")
+	return {}
+
 
 func physics_process(delta: float):
 	if !_is_waiting() and _alien.is_at_target:
 		_timer.wait_time = _get_wait_time()
 		_timer.start()
-
-
-func should_transition_to() -> String:
-	if _player_area.get_overlapping_bodies().size() > 0:
-		return "FollowPlayer"
-	return ""
 
 
 func _pick_new_target() -> void:
@@ -51,3 +49,6 @@ func _get_wait_time() -> float:
 
 func _on_timer_timeout() -> void:
 	_pick_new_target()
+
+func _on_player_area_player_entered() -> void:
+	transition_to("FollowPlayer")

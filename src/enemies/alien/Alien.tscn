@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=2]
+[gd_scene load_steps=46 format=2]
 
 [ext_resource path="res://enemies/alien/images/attack/alien_attack_2.png" type="Texture" id=1]
 [ext_resource path="res://enemies/alien/images/attack/alien_attack_4.png" type="Texture" id=2]
@@ -10,11 +10,12 @@
 [ext_resource path="res://enemies/alien/images/attack/alien_attack_1.png" type="Texture" id=8]
 [ext_resource path="res://enemies/alien/images/death/alien_death_1.png" type="Texture" id=9]
 [ext_resource path="res://enemies/alien/images/walk/alien_walk_1.png" type="Texture" id=10]
-[ext_resource path="res://enemies/alien/Alien.gd" type="Script" id=11]
+[ext_resource path="res://enemies/alien/Enemy.gd" type="Script" id=11]
 [ext_resource path="res://components/state_machine/StateMachine.gd" type="Script" id=12]
 [ext_resource path="res://enemies/alien/states/Wander.gd" type="Script" id=13]
 [ext_resource path="res://enemies/alien/states/AttackPlayer.gd" type="Script" id=14]
 [ext_resource path="res://enemies/alien/states/FollowPlayer.gd" type="Script" id=15]
+[ext_resource path="res://components/DetectionArea.gd" type="Script" id=16]
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -176,7 +177,7 @@ tracks/4/enabled = true
 tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 0,
+"update": 1,
 "values": [ Vector2( 11, -100 ) ]
 }
 tracks/5/type = "value"
@@ -188,7 +189,7 @@ tracks/5/enabled = true
 tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 0,
+"update": 1,
 "values": [ Vector2( -48, -115 ) ]
 }
 
@@ -254,7 +255,7 @@ tracks/4/enabled = true
 tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 0,
+"update": 1,
 "values": [ Vector2( 48, -115 ) ]
 }
 tracks/5/type = "value"
@@ -266,7 +267,7 @@ tracks/5/enabled = true
 tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 0,
+"update": 1,
 "values": [ Vector2( -11, -100 ) ]
 }
 
@@ -307,7 +308,7 @@ tracks/2/enabled = true
 tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 0,
+"update": 1,
 "values": [ Vector2( 0, -100 ) ]
 }
 tracks/3/type = "value"
@@ -331,7 +332,7 @@ tracks/4/enabled = true
 tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 0,
+"update": 1,
 "values": [ Vector2( -48, -115 ) ]
 }
 tracks/5/type = "value"
@@ -343,7 +344,7 @@ tracks/5/enabled = true
 tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 0,
+"update": 1,
 "values": [ Vector2( 11, -100 ) ]
 }
 
@@ -384,7 +385,7 @@ tracks/2/enabled = true
 tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 0,
+"update": 1,
 "values": [ Vector2( 0, -100 ) ]
 }
 tracks/3/type = "value"
@@ -408,7 +409,7 @@ tracks/4/enabled = true
 tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 0,
+"update": 1,
 "values": [ Vector2( -11, -100 ) ]
 }
 tracks/5/type = "value"
@@ -420,7 +421,7 @@ tracks/5/enabled = true
 tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 0,
+"update": 1,
 "values": [ Vector2( 48, -115 ) ]
 }
 
@@ -486,7 +487,7 @@ tracks/4/enabled = true
 tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 0,
+"update": 1,
 "values": [ Vector2( 11, -100 ) ]
 }
 tracks/5/type = "value"
@@ -498,7 +499,7 @@ tracks/5/enabled = true
 tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 0,
+"update": 1,
 "values": [ Vector2( -48, -115 ) ]
 }
 
@@ -644,7 +645,7 @@ transitions = [ "idle", "walk", SubResource( 19 ), "walk", "idle", SubResource( 
 start_node = "idle"
 
 [sub_resource type="AnimationNodeBlendTree" id=25]
-graph_offset = Vector2( -357.651, 46.4184 )
+graph_offset = Vector2( -380.979, 30.3512 )
 nodes/state_machine/node = SubResource( 24 )
 nodes/state_machine/position = Vector2( -40, 110 )
 node_connections = [ "output", 0, "state_machine" ]
@@ -689,7 +690,7 @@ anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/state_machine/playback = SubResource( 26 )
 parameters/state_machine/damage/blend_position = 0.225653
-parameters/state_machine/idle/blend_position = 0
+parameters/state_machine/idle/blend_position = -9.93069e-06
 parameters/state_machine/walk/blend_position = -0.75772
 
 [node name="HitArea" type="Area2D" parent="."]
@@ -697,6 +698,7 @@ modulate = Color( 0.00784314, 0.45098, 0.690196, 1 )
 position = Vector2( -11, -100 )
 collision_layer = 32
 collision_mask = 0
+script = ExtResource( 16 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea"]
 shape = SubResource( 27 )
@@ -707,6 +709,7 @@ position = Vector2( 48, -115 )
 collision_layer = 128
 collision_mask = 16
 monitorable = false
+script = ExtResource( 16 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
 shape = SubResource( 28 )
@@ -717,11 +720,11 @@ rotation = 1.5708
 shape = SubResource( 29 )
 
 [node name="PlayerDetectionArea" type="Area2D" parent="."]
-visible = false
 modulate = Color( 0.133333, 0.827451, 0.141176, 0.2 )
 collision_layer = 0
 collision_mask = 2
 monitorable = false
+script = ExtResource( 16 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetectionArea"]
 shape = SubResource( 30 )
@@ -733,7 +736,6 @@ start_node_path = NodePath("Wander")
 [node name="Wander" type="Node" parent="StateMachine"]
 script = ExtResource( 13 )
 wander_radius = 320.0
-wait_time = 0.0
 player_area_path = NodePath("../../PlayerDetectionArea")
 
 [node name="Timer" type="Timer" parent="StateMachine/Wander"]

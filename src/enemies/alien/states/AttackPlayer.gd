@@ -6,7 +6,13 @@ onready var _attack_area: Area2D = get_node(attack_area_path)
 onready var _alien : KinematicBody2D = owner as KinematicBody2D
 
 
-func should_transition_to() -> String:
-	if _attack_area.get_overlapping_areas().size() == 0:
-		return "FollowPlayer"
-	return ""
+func enter(msg: Dictionary) -> void:
+	_attack_area.connect("player_exited", self, "_on_attack_area_player_exited")
+
+func exit() -> Dictionary:
+	_attack_area.disconnect("player_exited", self, "_on_attack_area_player_exited")
+	return {}
+
+
+func _on_attack_area_player_exited() -> void:
+	transition_to("FollowPlayer")

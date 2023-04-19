@@ -14,6 +14,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://components/state_machine/AutoForwardState.gd"
 }, {
+"base": "Area2D",
+"class": "DetectionArea",
+"language": "GDScript",
+"path": "res://components/DetectionArea.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Enemy",
+"language": "GDScript",
+"path": "res://enemies/alien/Enemy.gd"
+}, {
 "base": "KinematicBody2D",
 "class": "Player",
 "language": "GDScript",
@@ -36,6 +46,8 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "AutoForwardState": "",
+"DetectionArea": "",
+"Enemy": "",
 "Player": "",
 "Shooter": "",
 "State": "",
