@@ -1,10 +1,11 @@
 extends AutoForwardState
 
-const MAX_DISTANCE = 20
-
 export var wander_radius: float = 640.0
 export var wait_time: float = 3.0
 export(float, 0.0, 1.0, 0.1) var wait_randomness: float = 0.2
+
+export var player_area_path: NodePath
+onready var _player_area: Area2D = get_node(player_area_path)
 
 var _target: Vector2
 
@@ -21,10 +22,15 @@ func enter(msg: Dictionary) -> void:
 	_pick_new_target()
 
 func physics_process(delta: float):
-	if !_is_waiting() and _is_at_target():
-		_alien.target = _alien.global_position
+	if !_is_waiting() and _alien.is_at_target:
 		_timer.wait_time = _get_wait_time()
 		_timer.start()
+
+
+func should_transition_to() -> String:
+	if _player_area.get_overlapping_bodies().size() > 0:
+		return "FollowPlayer"
+	return ""
 
 
 func _pick_new_target() -> void:
@@ -35,9 +41,6 @@ func _pick_new_target() -> void:
 	
 	_target = new_target
 	_alien.target = _target
-
-func _is_at_target() -> bool:
-	return _alien.global_position.distance_to(_target) < MAX_DISTANCE
 
 func _is_waiting() -> bool:
 	return _timer.time_left > 0

@@ -7,6 +7,7 @@ onready var _state_machine: StateMachine = _get_state_machine()
 func process(delta: float) -> void:
 	var next_state := should_transition_to()
 	if !next_state.empty():
+		printt("AutoForwardState", name, next_state)
 		_state_machine.transition_to(next_state)
 		return
 

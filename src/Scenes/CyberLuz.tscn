@@ -1215,6 +1215,7 @@ position = Vector2( -151.882, -1.40272 )
 script = ExtResource( 16 )
 
 [node name="collision" type="CollisionShape2D" parent="CameraZoom"]
+visible = false
 position = Vector2( 4463.07, 31.1709 )
 shape = SubResource( 6 )
 

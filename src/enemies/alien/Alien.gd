@@ -12,6 +12,8 @@ export(float, 0.0, 250.0, 10.0) var life_max: float = 100.0
 
 export var target: Vector2
 
+var is_at_target: bool = false
+
 var _speed_current: float
 var _life_current: float
 
@@ -28,20 +30,23 @@ func _physics_process(_delta):
 
 
 func _move():
-	var input_direction = global_position.direction_to(target)
+	var distance_to_target = global_position.distance_to(target)
+	var direction = global_position.direction_to(target)
+	var max_distance = slow_radius / 2
 	
-	_animation_tree.set(ANIM_WALK_BLEND_POSITION, input_direction.x)
-	if input_direction.length_squared() > 0:
-		_animation_tree.set(ANIM_IDLE_BLEND_POSITION, input_direction.x)
-		_animation_tree.set(ANIM_DAMAGE_BLEND_POSITION, input_direction.x)
+	if distance_to_target > max_distance:
+		_animation_tree.set(ANIM_WALK_BLEND_POSITION, direction.x)
+		_animation_tree.set(ANIM_IDLE_BLEND_POSITION, direction.x)
+		_animation_tree.set(ANIM_DAMAGE_BLEND_POSITION, direction.x)
 		_animation_state_machine.travel("walk")
 		
 		_speed_current += accerelation * get_physics_process_delta_time()
-		_speed_current *= min(global_position.distance_to(target) / slow_radius, 1.0)
+		_speed_current *= min(distance_to_target / slow_radius, 1.0)
 		_speed_current = min(_speed_current, speed_max)
-		printt(accerelation, global_position.distance_to(target) / slow_radius, _speed_current)
+		is_at_target = false
 	else:
 		_animation_state_machine.travel("idle")
 		_speed_current = 0.0
+		is_at_target = true
 	
-	move_and_slide(input_direction * _speed_current)
+	move_and_slide(direction * _speed_current)
