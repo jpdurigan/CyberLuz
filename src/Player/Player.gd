@@ -26,6 +26,17 @@ func _physics_process(_delta):
 	_move()
 
 
+func take_damage(value: float) -> void:
+	_life_current -= value
+	if is_dead():
+		queue_free()
+	else:
+		_animation_state_machine.travel("damage")
+
+func is_dead() -> bool:
+	return _life_current <= 0
+
+
 func _move():
 	var input_direction = Vector2(
 		Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left"),
@@ -36,12 +47,14 @@ func _move():
 	if input_direction.length_squared() > 0:
 		_animation_tree.set(ANIM_IDLE_BLEND_POSITION, input_direction.x)
 		_animation_tree.set(ANIM_DAMAGE_BLEND_POSITION, input_direction.x)
-		_animation_state_machine.travel("walk")
+		if _animation_state_machine.get_current_node() == "idle":
+			_animation_state_machine.travel("walk")
 		
 		_speed_current += accerelation * get_physics_process_delta_time()
 		_speed_current = min(_speed_current, speed_max)
 	else:
-		_animation_state_machine.travel("idle")
+		if _animation_state_machine.get_current_node() == "walk":
+			_animation_state_machine.travel("idle")
 		_speed_current = speed_min
 	
 	move_and_slide(input_direction * _speed_current)

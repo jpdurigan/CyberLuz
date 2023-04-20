@@ -697,7 +697,8 @@ parameters/state_machine/walk/blend_position = -0.75772
 modulate = Color( 0.00784314, 0.45098, 0.690196, 1 )
 position = Vector2( -11, -100 )
 collision_layer = 32
-collision_mask = 0
+collision_mask = 64
+monitoring = false
 script = ExtResource( 16 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea"]
@@ -749,3 +750,6 @@ attack_area_path = NodePath("../../AttackArea")
 [node name="AttackPlayer" type="Node" parent="StateMachine"]
 script = ExtResource( 14 )
 attack_area_path = NodePath("../../AttackArea")
+
+[node name="Timer" type="Timer" parent="StateMachine/AttackPlayer"]
+one_shot = true

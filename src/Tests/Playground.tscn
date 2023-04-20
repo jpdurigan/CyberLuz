@@ -3,15 +3,40 @@
 [ext_resource path="res://enemies/alien/Alien.tscn" type="PackedScene" id=1]
 [ext_resource path="res://player/Player.tscn" type="PackedScene" id=2]
 
-[node name="Playground" type="Node2D"]
+[node name="Playground" type="YSort"]
 
 [node name="Alien" parent="." instance=ExtResource( 1 )]
-position = Vector2( 500, 365 )
+position = Vector2( 1038, 365 )
+
+[node name="Alien2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 155, 282 )
+
+[node name="Alien3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1241, 54 )
+
+[node name="Alien4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1370, 340 )
+
+[node name="Alien5" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1088, 669 )
+
+[node name="Alien6" parent="." instance=ExtResource( 1 )]
+position = Vector2( 256, 792 )
+
+[node name="Alien7" parent="." instance=ExtResource( 1 )]
+position = Vector2( 248, -81 )
+
+[node name="Alien8" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1463, 613 )
+
+[node name="Alien9" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1644, 71 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
+visible = false
 position = Vector2( 518, 306 )
 current = true
 zoom = Vector2( 3, 3 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 798, 960 )
+position = Vector2( -801, 601 )

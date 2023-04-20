@@ -599,7 +599,7 @@ tree_root = SubResource( 40 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/state_machine/playback = SubResource( 41 )
-parameters/state_machine/damage/blend_position = -0.00934277
+parameters/state_machine/damage/blend_position = 0.0091295
 parameters/state_machine/idle/blend_position = 0
 parameters/state_machine/walk/blend_position = Vector2( 0.00226247, 0.0337553 )
 
@@ -610,6 +610,7 @@ shape = SubResource( 18 )
 [node name="Shooter" parent="." instance=ExtResource( 18 )]
 position = Vector2( 0, -75 )
 script = ExtResource( 19 )
+rate = 15.0
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.1

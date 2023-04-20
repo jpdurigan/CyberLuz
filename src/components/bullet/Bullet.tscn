@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://components/bullet/Bullet.gd" type="Script" id=1]
+[ext_resource path="res://player/images/bullet.png" type="Texture" id=2]
+[ext_resource path="res://components/DetectionArea.gd" type="Script" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+
+[node name="Bullet" type="Sprite"]
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 15, 15 )
+script = ExtResource( 1 )
+damage = 10.0
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+
+[node name="DetectionArea" type="Area2D" parent="."]
+collision_layer = 64
+collision_mask = 32
+monitorable = false
+script = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
+shape = SubResource( 1 )

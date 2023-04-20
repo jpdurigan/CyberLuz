@@ -5,6 +5,8 @@ signal player_entered
 signal player_exited
 signal enemy_entered
 signal enemy_exited
+signal entered
+signal exited
 
 var player: Player = null
 var enemy: Enemy = null
@@ -38,14 +40,19 @@ func _on_area_entered(area: Area2D) -> void:
 	enemy = area.owner as Enemy
 	if enemy:
 		emit_signal("enemy_entered")
+	
+	emit_signal("entered")
 
 func _on_area_exited(area: Area2D) -> void:
 	if area.owner == player:
 		player = null
 		emit_signal("player_exited")
+	
 	if area.owner == enemy:
 		enemy = null
 		emit_signal("enemy_exited")
+	
+	emit_signal("exited")
 
 func _on_body_entered(body: Node) -> void:
 	player = body as Player
@@ -55,11 +62,16 @@ func _on_body_entered(body: Node) -> void:
 	enemy = body as Enemy
 	if enemy:
 		emit_signal("enemy_entered")
+	
+	emit_signal("entered")
 
 func _on_body_exited(body: Node) -> void:
 	if body == player:
 		player = null
 		emit_signal("player_exited")
+	
 	if body == enemy:
 		enemy = null
 		emit_signal("enemy_exited")
+	
+	emit_signal("exited")
