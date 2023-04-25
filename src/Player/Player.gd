@@ -17,10 +17,19 @@ var _life_current: float
 onready var _animation_tree: AnimationTree = $AnimationTree
 onready var _animation_state_machine: AnimationNodeStateMachinePlayback = _animation_tree.get(ANIM_STATE_MACHINE_PLAYBACK)
 
+onready var _shooter: Shooter = $Shooter
+onready var _untie_area: Area2D = $UntieArea
+
 func _ready():
 	_speed_current = speed_min
 	_life_current = life_max
 
+func _unhandled_input(event: InputEvent):
+	if Input.is_action_just_pressed("shoot"):
+		if _untie_area.has_overlapping_civil():
+			_untie_area.civil.untie()
+		else:
+			_shooter.shoot()
 
 func _physics_process(_delta):
 	_move()

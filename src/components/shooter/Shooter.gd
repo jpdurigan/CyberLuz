@@ -12,11 +12,14 @@ onready var _timer: Timer = $Timer
 func _ready():
 	_timer.connect("timeout", self, "_on_timer_timeout")
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	_aim()
 	if _should_shoot():
 		_shoot()
 
+
+func shoot() -> void:
+	_shoot()
 
 func _should_shoot() -> bool:
 	return _timer.time_left == 0

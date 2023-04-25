@@ -25,9 +25,9 @@ onready var _animation_player: AnimationPlayer = $AnimationPlayer
 onready var _animation_tree: AnimationTree = $AnimationTree
 onready var _animation_state_machine: AnimationNodeStateMachinePlayback = _animation_tree.get(ANIM_STATE_MACHINE_PLAYBACK)
 
-
 func _ready():
 	_speed_current = 0.0
+	target = global_position
 #	_life_current = life_max
 
 func _physics_process(_delta):
@@ -38,13 +38,8 @@ func _physics_process(_delta):
 
 func untie():
 	_animation_state_machine.travel("release")
-	_animation_player.connect("animation_started", self, "_untie")
 
-func _untie(anim_name: String):
-	if not anim_name.begins_with("walk"):
-		return
-	
-	_animation_player.disconnect("animation_started", self, "_untie")
+func resume_untie():
 	target = global_position - Vector2(1000, 0)
 
 #func take_damage(value: float) -> void:
@@ -82,5 +77,7 @@ func _move():
 
 func _set_initial_direction(direction: float):
 	initial_direction = direction
+	if !_animation_tree:
+		yield(self, "ready")
 	_animation_tree.set(ANIM_TIED_BLEND_POSITION, initial_direction)
 	_animation_tree.set(ANIM_RELEASE_BLEND_POSITION, initial_direction)
