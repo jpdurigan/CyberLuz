@@ -569,8 +569,8 @@ node_connections = [ "output", 0, "state_machine" ]
 radius = 30.0167
 
 [sub_resource type="CapsuleShape2D" id=14]
-radius = 50.0
-height = 84.0
+radius = 30.0
+height = 112.0
 
 [node name="Player" type="KinematicBody2D"]
 collision_layer = 2

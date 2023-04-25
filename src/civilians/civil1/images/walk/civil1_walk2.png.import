@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/C1A.png-fa1f5ac9b08101d7252cb5b2f615bbf8.stex"
+path="res://.import/civil1_walk2.png-d28765ce20479b41044f0d796e91e787.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Civil/CIVIS01/Amarrado/C1A.png"
-dest_files=[ "res://.import/C1A.png-fa1f5ac9b08101d7252cb5b2f615bbf8.stex" ]
+source_file="res://civilians/civil1/images/walk/civil1_walk2.png"
+dest_files=[ "res://.import/civil1_walk2.png-d28765ce20479b41044f0d796e91e787.stex" ]
 
 [params]
 

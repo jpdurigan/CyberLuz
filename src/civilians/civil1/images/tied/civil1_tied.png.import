@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/C1C_1.png-eee3e53e1434bca1d384c3f44ea22a6c.stex"
+path="res://.import/civil1_tied.png-ecc681dbe77a9cf4fd8fea4d458b5b88.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Civil/CIVIS01/Correndo/C1C_1.png"
-dest_files=[ "res://.import/C1C_1.png-eee3e53e1434bca1d384c3f44ea22a6c.stex" ]
+source_file="res://civilians/civil1/images/tied/civil1_tied.png"
+dest_files=[ "res://.import/civil1_tied.png-ecc681dbe77a9cf4fd8fea4d458b5b88.stex" ]
 
 [params]
 

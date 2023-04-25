@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/C1S.png-9f96147dcc2510c2902c2ca233fd34e0.stex"
+path="res://.import/civil1_release.png-f365c067a6ff36ddb8de5da891d8750a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Civil/CIVIS01/Solto/C1S.png"
-dest_files=[ "res://.import/C1S.png-9f96147dcc2510c2902c2ca233fd34e0.stex" ]
+source_file="res://civilians/civil1/images/release/civil1_release.png"
+dest_files=[ "res://.import/civil1_release.png-f365c067a6ff36ddb8de5da891d8750a.stex" ]
 
 [params]
 
