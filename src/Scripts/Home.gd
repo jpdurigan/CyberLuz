@@ -9,5 +9,5 @@ func _on_ButtonCredits_button_down():
 
 
 func _on_ButtonIniciar_button_down():
-	get_tree().change_scene_to(load("res://Scenes/CyberLuz.tscn"))
+	SceneChanger.change_to("res://Scenes/CyberLuz.tscn")
 	pass # Replace with function body.pass # Replace with function body.

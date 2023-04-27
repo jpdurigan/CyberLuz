@@ -13,7 +13,23 @@ current = true
 position = Vector2( 164, 452 )
 
 [node name="Civil" parent="." instance=ExtResource( 1 )]
-position = Vector2( 510, 318 )
+position = Vector2( 504, 293 )
 accerelation = 300.0
 target = Vector2( 510, 318 )
+
+[node name="Civil2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 624, 442 )
+accerelation = 300.0
+target = Vector2( 510, 318 )
+
+[node name="Civil3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 741, 258 )
+accerelation = 300.0
+target = Vector2( 648, 422 )
+initial_direction = -1.0
+
+[node name="Civil4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 846, 409 )
+accerelation = 300.0
+target = Vector2( 751, 262 )
 initial_direction = -1.0
