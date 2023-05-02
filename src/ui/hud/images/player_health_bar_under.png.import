@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/PlayerMoldura.png-fa7059b1dc4d57015e3e82f63ef462b1.stex"
+path="res://.import/player_health_bar_under.png-6a5b00efd522b7b0d5e83c6e870b3397.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/HealthBars/PLAYER_HEALTHBAR/PlayerMoldura.png"
-dest_files=[ "res://.import/PlayerMoldura.png-fa7059b1dc4d57015e3e82f63ef462b1.stex" ]
+source_file="res://ui/hud/images/player_health_bar_under.png"
+dest_files=[ "res://.import/player_health_bar_under.png-6a5b00efd522b7b0d5e83c6e870b3397.stex" ]
 
 [params]
 
