@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://ui/resources/fonts/ocr_a_extended_regular_56pt.tres" type="DynamicFont" id=1]
 [ext_resource path="res://ui/resources/buttons/button_green_dark.tres" type="Theme" id=2]
 [ext_resource path="res://ui/resources/popup_bg.png" type="Texture" id=3]
 [ext_resource path="res://ui/resources/buttons/button_green_light.tres" type="Theme" id=4]
+[ext_resource path="res://ui/resources/buttons/ReturnToGameButton.gd" type="Script" id=5]
+[ext_resource path="res://ui/resources/buttons/ExitGameButton.gd" type="Script" id=6]
 
 [node name="PauseScreen" type="Control"]
 pause_mode = 2
@@ -50,6 +52,7 @@ margin_bottom = 98.0
 size_flags_horizontal = 3
 theme = ExtResource( 4 )
 text = "RETORNAR"
+script = ExtResource( 5 )
 
 [node name="SairDoJogo" type="Button" parent="Content/Buttons"]
 margin_top = 122.0
@@ -58,3 +61,4 @@ margin_bottom = 220.0
 size_flags_horizontal = 3
 theme = ExtResource( 2 )
 text = "SAIR DO JOGO"
+script = ExtResource( 6 )

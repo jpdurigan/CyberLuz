@@ -52,7 +52,7 @@ alignment = 1
 margin_left = 172.0
 margin_right = 422.0
 margin_bottom = 100.0
-_scene_path = "res://Tests/Playground.tscn"
+_scene_path = "res://world/maps/Map.tscn"
 
 [node name="Creditos" parent="Margins/Content/Buttons" instance=ExtResource( 3 )]
 margin_left = 458.0

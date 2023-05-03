@@ -1,11 +1,13 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
+[ext_resource path="res://ui/resources/buttons/ExitGameButton.gd" type="Script" id=1]
+[ext_resource path="res://ui/resources/buttons/ReturnToGameButton.gd" type="Script" id=2]
+[ext_resource path="res://ui/config/SoundMaster.gd" type="Script" id=3]
 [ext_resource path="res://ui/resources/panels/images/panel_green_dark.png" type="Texture" id=4]
 [ext_resource path="res://ui/resources/slider_sound_bar.tres" type="Theme" id=5]
 [ext_resource path="res://ui/config/images/button_sound_on.png" type="Texture" id=6]
 [ext_resource path="res://ui/config/images/button_sound_off.png" type="Texture" id=7]
 [ext_resource path="res://ui/resources/fonts/ocr_a_extended_regular_36pt.tres" type="DynamicFont" id=8]
-[ext_resource path="res://Scripts/SoundControl.gd" type="Script" id=10]
 [ext_resource path="res://ui/resources/popup_bg.png" type="Texture" id=13]
 [ext_resource path="res://ui/resources/buttons/button_green_light.tres" type="Theme" id=14]
 [ext_resource path="res://ui/resources/buttons/button_green_dark.tres" type="Theme" id=15]
@@ -19,6 +21,7 @@ margin_top = 72.0
 margin_bottom = 72.0
 
 [node name="ConfigScreen" type="Control"]
+pause_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
 
@@ -63,23 +66,25 @@ margin_right = 464.0
 margin_bottom = 185.0
 size_flags_horizontal = 6
 custom_constants/separation = 24
+script = ExtResource( 3 )
 
-[node name="TextureButton" type="TextureButton" parent="PanelContainer/List/SoundMaster"]
+[node name="Button" type="TextureButton" parent="PanelContainer/List/SoundMaster"]
 margin_right = 72.0
 margin_bottom = 111.0
 rect_min_size = Vector2( 72, 72 )
-texture_normal = ExtResource( 7 )
-texture_pressed = ExtResource( 6 )
+toggle_mode = true
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 7 )
 expand = true
 stretch_mode = 5
 
-[node name="HSlider" type="HSlider" parent="PanelContainer/List/SoundMaster"]
+[node name="Slider" type="HSlider" parent="PanelContainer/List/SoundMaster"]
 margin_left = 96.0
 margin_right = 412.0
 margin_bottom = 111.0
 theme = ExtResource( 5 )
-min_value = -30.0
-script = ExtResource( 10 )
+min_value = -32.0
+max_value = 0.0
 
 [node name="Control" type="Control" parent="PanelContainer/List"]
 margin_top = 221.0
@@ -99,6 +104,7 @@ margin_right = 224.0
 margin_bottom = 98.0
 theme = ExtResource( 14 )
 text = "RETORNAR"
+script = ExtResource( 2 )
 
 [node name="SairDoJogo" type="Button" parent="PanelContainer/List/Control/List"]
 margin_left = 248.0
@@ -106,3 +112,4 @@ margin_right = 560.0
 margin_bottom = 98.0
 theme = ExtResource( 15 )
 text = "SAIR DO JOGO"
+script = ExtResource( 1 )

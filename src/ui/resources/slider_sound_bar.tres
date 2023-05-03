@@ -18,7 +18,7 @@ margin_bottom = 18.0
 [resource]
 HSlider/icons/grabber = ExtResource( 2 )
 HSlider/icons/grabber_disabled = null
-HSlider/icons/grabber_highlight = null
+HSlider/icons/grabber_highlight = ExtResource( 2 )
 HSlider/icons/tick = null
 HSlider/styles/grabber_area = SubResource( 1 )
 HSlider/styles/grabber_area_highlight = SubResource( 2 )

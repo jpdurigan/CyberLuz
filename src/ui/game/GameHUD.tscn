@@ -1,0 +1,136 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://autoloads/hud/images/actions/button_action_rope.png" type="Texture" id=1]
+[ext_resource path="res://autoloads/hud/images/actions/button_action_tapioca.png" type="Texture" id=2]
+[ext_resource path="res://autoloads/hud/images/actions/button_action_gun.png" type="Texture" id=3]
+[ext_resource path="res://autoloads/hud/images/buttons/button_config.png" type="Texture" id=4]
+[ext_resource path="res://autoloads/hud/images/buttons/button_pause.png" type="Texture" id=5]
+[ext_resource path="res://autoloads/hud/images/actions/GunPressed.png" type="Texture" id=6]
+[ext_resource path="res://autoloads/hud/images/player_health/player_health_bar_over.png" type="Texture" id=7]
+[ext_resource path="res://autoloads/hud/images/player_health/player_health_bar_decoration.png" type="Texture" id=8]
+[ext_resource path="res://autoloads/hud/images/actions/TapiocaPressed.png" type="Texture" id=9]
+[ext_resource path="res://autoloads/hud/images/actions/RopePressed.png" type="Texture" id=10]
+[ext_resource path="res://autoloads/hud/images/player_health/player_health_bar_progress.png" type="Texture" id=11]
+[ext_resource path="res://autoloads/hud/images/player_health/player_health_bar_under.png" type="Texture" id=12]
+[ext_resource path="res://ui/game/PauseButton.gd" type="Script" id=13]
+[ext_resource path="res://ui/game/ConfigButton.gd" type="Script" id=14]
+
+[node name="Game" type="Control"]
+anchor_right = 1.0
+
+[node name="PlayerHealth" type="Control" parent="."]
+
+[node name="Border" type="TextureRect" parent="PlayerHealth"]
+margin_left = 36.0
+margin_top = 36.0
+margin_right = 354.0
+margin_bottom = 97.0
+texture = ExtResource( 7 )
+expand = true
+stretch_mode = 6
+
+[node name="Progress" type="TextureProgress" parent="PlayerHealth/Border"]
+show_behind_parent = true
+anchor_top = 0.443
+anchor_right = 0.978
+anchor_bottom = 0.754
+margin_top = -19.023
+margin_right = -0.00402832
+margin_bottom = 0.00600052
+rect_min_size = Vector2( 300, 30 )
+value = 100.0
+texture_under = ExtResource( 12 )
+texture_progress = ExtResource( 11 )
+nine_patch_stretch = true
+
+[node name="Decoration" type="TextureRect" parent="PlayerHealth/Border"]
+show_behind_parent = true
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -50.0
+margin_right = 143.0
+margin_bottom = 50.0
+texture = ExtResource( 8 )
+expand = true
+stretch_mode = 6
+
+[node name="Buttons" type="Control" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="List" type="HBoxContainer" parent="Buttons"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -148.0
+margin_top = 36.0
+margin_right = -36.0
+margin_bottom = 84.0
+custom_constants/separation = 24
+alignment = 2
+
+[node name="Config" type="TextureButton" parent="Buttons/List"]
+margin_right = 44.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 44, 48 )
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 4 )
+expand = true
+script = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Pause" type="TextureButton" parent="Buttons/List"]
+margin_left = 68.0
+margin_right = 112.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 44, 48 )
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 5 )
+expand = true
+script = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Actions" type="Control" parent="."]
+visible = false
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 10.6908
+margin_top = 367.65
+margin_right = 402.691
+margin_bottom = 671.65
+rect_scale = Vector2( 0.75, 0.75 )
+
+[node name="AttackButton" type="TextureButton" parent="Actions"]
+margin_left = 92.9432
+margin_top = -3.34961
+margin_right = 764.943
+margin_bottom = 701.65
+rect_scale = Vector2( 0.25, 0.25 )
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 6 )
+
+[node name="RopeButton" type="TextureButton" parent="Actions"]
+margin_left = 26.2893
+margin_top = 115.338
+margin_right = 698.289
+margin_bottom = 820.338
+rect_scale = Vector2( 0.25, 0.25 )
+texture_normal = ExtResource( 1 )
+texture_pressed = ExtResource( 10 )
+
+[node name="TapiocaButton" type="TextureButton" parent="Actions"]
+margin_left = 153.412
+margin_top = 116.048
+margin_right = 825.411
+margin_bottom = 821.048
+rect_scale = Vector2( 0.25, 0.25 )
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

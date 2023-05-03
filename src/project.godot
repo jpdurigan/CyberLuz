@@ -63,13 +63,14 @@ _global_script_class_icons={
 [application]
 
 config/name="Cyber Luz"
-run/main_scene="res://Scenes/CyberLuz.tscn"
+run/main_scene="res://ui/start/StartScreen.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
-Global="*res://Scripts/Global.gd"
-SceneChanger="*res://globals/scene_changer/SceneChanger.tscn"
+Global="*res://autoloads/global/Global.tscn"
+SceneChanger="*res://autoloads/scene_changer/SceneChanger.tscn"
+HUD="*res://autoloads/hud/HUD.tscn"
 
 [debug]
 

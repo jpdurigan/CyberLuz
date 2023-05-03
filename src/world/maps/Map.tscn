@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://world/maps/Map.gd" type="Script" id=1]
+[ext_resource path="res://player/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://civilians/civil1/Civil1.tscn" type="PackedScene" id=3]
+[ext_resource path="res://enemies/alien/Alien.tscn" type="PackedScene" id=4]
+
+[node name="Map" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 518, 306 )
+current = true
+
+[node name="Entities" type="YSort" parent="."]
+
+[node name="Player" parent="Entities" instance=ExtResource( 2 )]
+position = Vector2( 164, 452 )
+
+[node name="Civil" parent="Entities" instance=ExtResource( 3 )]
+position = Vector2( 504, 293 )
+accerelation = 300.0
+target = Vector2( 504, 293 )
+
+[node name="Civil2" parent="Entities" instance=ExtResource( 3 )]
+position = Vector2( 624, 442 )
+accerelation = 300.0
+target = Vector2( 624, 442 )
+
+[node name="Civil3" parent="Entities" instance=ExtResource( 3 )]
+position = Vector2( 741, 258 )
+accerelation = 300.0
+target = Vector2( 741, 258 )
+initial_direction = -1.0
+
+[node name="Civil4" parent="Entities" instance=ExtResource( 3 )]
+position = Vector2( 846, 409 )
+accerelation = 300.0
+target = Vector2( 846, 409 )
+initial_direction = -1.0
+
+[node name="Alien" parent="." instance=ExtResource( 4 )]
+position = Vector2( 773, 527 )

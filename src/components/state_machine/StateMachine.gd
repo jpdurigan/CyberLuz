@@ -5,6 +5,7 @@ extends Node
 export var start_node_path: NodePath
 
 var state: State
+var state_name: String
 
 onready var _start_node: State = get_node_or_null(start_node_path) as State
 
@@ -12,7 +13,7 @@ onready var _start_node: State = get_node_or_null(start_node_path) as State
 func _ready():
 	var initial_msg := {}
 	_start_node.enter(initial_msg)
-	state = _start_node
+	_set_state(_start_node)
 
 func _unhandled_input(event):
 	if state:
@@ -34,4 +35,12 @@ func transition_to(state_path: String) -> void:
 	
 	var msg := state.exit()
 	next_state.enter(msg)
-	state = next_state
+	_set_state(next_state)
+
+func is_current_state(p_name: String) -> bool:
+	return p_name in state_name
+
+
+func _set_state(p_state: State) -> void:
+	state = p_state
+	state_name = get_path_to(state)
