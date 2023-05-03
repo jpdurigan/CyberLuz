@@ -1,0 +1,108 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://ui/resources/panels/images/panel_green_dark.png" type="Texture" id=4]
+[ext_resource path="res://ui/resources/slider_sound_bar.tres" type="Theme" id=5]
+[ext_resource path="res://ui/config/images/button_sound_on.png" type="Texture" id=6]
+[ext_resource path="res://ui/config/images/button_sound_off.png" type="Texture" id=7]
+[ext_resource path="res://ui/resources/fonts/ocr_a_extended_regular_36pt.tres" type="DynamicFont" id=8]
+[ext_resource path="res://Scripts/SoundControl.gd" type="Script" id=10]
+[ext_resource path="res://ui/resources/popup_bg.png" type="Texture" id=13]
+[ext_resource path="res://ui/resources/buttons/button_green_light.tres" type="Theme" id=14]
+[ext_resource path="res://ui/resources/buttons/button_green_dark.tres" type="Theme" id=15]
+
+[sub_resource type="StyleBoxTexture" id=8]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 1033, 942 )
+margin_left = 72.0
+margin_right = 72.0
+margin_top = 72.0
+margin_bottom = 72.0
+
+[node name="ConfigScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="BG" type="TextureRect" parent="."]
+margin_right = 3200.0
+margin_bottom = 1883.0
+rect_scale = Vector2( 0.32, 0.32 )
+texture = ExtResource( 13 )
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -330.0
+margin_top = -182.5
+margin_right = 330.0
+margin_bottom = 182.5
+rect_min_size = Vector2( 660, 0 )
+custom_styles/panel = SubResource( 8 )
+
+[node name="List" type="VBoxContainer" parent="PanelContainer"]
+margin_left = 72.0
+margin_top = 72.0
+margin_right = 588.0
+margin_bottom = 293.0
+custom_constants/separation = 36
+
+[node name="Label" type="Label" parent="PanelContainer/List"]
+margin_right = 516.0
+margin_bottom = 38.0
+custom_colors/font_color = Color( 0.94902, 0.67451, 0.2, 1 )
+custom_fonts/font = ExtResource( 8 )
+text = "CONFIGURAÇÃO"
+align = 1
+valign = 1
+
+[node name="SoundMaster" type="HBoxContainer" parent="PanelContainer/List"]
+margin_left = 52.0
+margin_top = 74.0
+margin_right = 464.0
+margin_bottom = 185.0
+size_flags_horizontal = 6
+custom_constants/separation = 24
+
+[node name="TextureButton" type="TextureButton" parent="PanelContainer/List/SoundMaster"]
+margin_right = 72.0
+margin_bottom = 111.0
+rect_min_size = Vector2( 72, 72 )
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 6 )
+expand = true
+stretch_mode = 5
+
+[node name="HSlider" type="HSlider" parent="PanelContainer/List/SoundMaster"]
+margin_left = 96.0
+margin_right = 412.0
+margin_bottom = 111.0
+theme = ExtResource( 5 )
+min_value = -30.0
+script = ExtResource( 10 )
+
+[node name="Control" type="Control" parent="PanelContainer/List"]
+margin_top = 221.0
+margin_right = 516.0
+margin_bottom = 221.0
+
+[node name="List" type="HBoxContainer" parent="PanelContainer/List/Control"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -280.0
+margin_right = 280.0
+margin_bottom = 98.0
+custom_constants/separation = 24
+
+[node name="Retornar" type="Button" parent="PanelContainer/List/Control/List"]
+margin_right = 224.0
+margin_bottom = 98.0
+theme = ExtResource( 14 )
+text = "RETORNAR"
+
+[node name="SairDoJogo" type="Button" parent="PanelContainer/List/Control/List"]
+margin_left = 248.0
+margin_right = 560.0
+margin_bottom = 98.0
+theme = ExtResource( 15 )
+text = "SAIR DO JOGO"
