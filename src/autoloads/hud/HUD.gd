@@ -27,3 +27,7 @@ func show_config_screen() -> void:
 
 func hide_config_screen() -> void:
 	_config.hide()
+
+
+func update_health(current_health: float, max_health: float, tween_duration: float = -1.0) -> void:
+	_game.update_health(current_health, max_health, tween_duration)

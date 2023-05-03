@@ -23,6 +23,7 @@ onready var _untie_area: Area2D = $UntieArea
 func _ready():
 	_speed_current = speed_min
 	_life_current = life_max
+	HUD.update_health(_life_current, life_max, 0)
 
 func _unhandled_input(event: InputEvent):
 	if Input.is_action_just_pressed("shoot"):
@@ -41,6 +42,7 @@ func take_damage(value: float) -> void:
 		queue_free()
 	else:
 		_animation_state_machine.travel("damage")
+	HUD.update_health(_life_current, life_max)
 
 func is_dead() -> bool:
 	return _life_current <= 0
