@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://world/maps/Map.gd" type="Script" id=1]
 [ext_resource path="res://player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://civilians/civil1/Civil1.tscn" type="PackedScene" id=3]
+[ext_resource path="res://enemies/alien/Alien.tscn" type="PackedScene" id=4]
 [ext_resource path="res://world/assets/cacto_01/Cacto01.tscn" type="PackedScene" id=5]
 [ext_resource path="res://world/assets/pedra_01/Pedra01.tscn" type="PackedScene" id=6]
 [ext_resource path="res://world/assets/cacto_03/Cacto03.tscn" type="PackedScene" id=7]
@@ -10,6 +11,7 @@
 [ext_resource path="res://world/assets/cacto_02/Cacto02.tscn" type="PackedScene" id=9]
 [ext_resource path="res://components/camera/GameCamera.gd" type="Script" id=10]
 [ext_resource path="res://ui/start/images/BG.png" type="Texture" id=11]
+[ext_resource path="res://items/tapioca/Tapioca.tscn" type="PackedScene" id=12]
 
 [node name="Map" type="Node2D"]
 script = ExtResource( 1 )
@@ -75,3 +77,15 @@ position = Vector2( -212, 589 )
 
 [node name="Cacto01" parent="Entities/World" instance=ExtResource( 5 )]
 position = Vector2( -171, 668 )
+
+[node name="Tapioca" parent="Entities" instance=ExtResource( 12 )]
+position = Vector2( -127, 876 )
+
+[node name="Tapioca2" parent="Entities" instance=ExtResource( 12 )]
+position = Vector2( -326, 793 )
+
+[node name="Tapioca3" parent="Entities" instance=ExtResource( 12 )]
+position = Vector2( -518, 914 )
+
+[node name="Alien" parent="Entities" instance=ExtResource( 4 )]
+position = Vector2( 1127, 682 )

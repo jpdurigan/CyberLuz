@@ -36,6 +36,10 @@ func _physics_process(_delta):
 	_move()
 
 
+func add_health(value: float) -> void:
+	_life_current += value
+	HUD.update_health(_life_current, life_max)
+
 func take_damage(value: float) -> void:
 	_life_current -= value
 	if is_dead():
