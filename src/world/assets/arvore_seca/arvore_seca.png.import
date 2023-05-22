@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/button_pause.png-3d1ff51bbb2977f7c25857db07a78a4d.stex"
+path="res://.import/arvore_seca.png-090c3c0abd4930fa46ad3a456751f7bd.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://autoloads/hud/images/buttons/button_pause.png"
-dest_files=[ "res://.import/button_pause.png-3d1ff51bbb2977f7c25857db07a78a4d.stex" ]
+source_file="res://world/assets/arvore_seca/arvore_seca.png"
+dest_files=[ "res://.import/arvore_seca.png-090c3c0abd4930fa46ad3a456751f7bd.stex" ]
 
 [params]
 

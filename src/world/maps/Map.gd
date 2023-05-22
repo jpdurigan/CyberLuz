@@ -1,5 +1,5 @@
 extends Node2D
 
 
-func _enter_tree():
+func _ready():
 	Global.set_game_mode()

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/RopePressed.png-64af426fab1daefd9e3ab2174897002c.stex"
+path="res://.import/cacto_01.png-c92f75ba3ec68ea29f81ef0af36d994d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://autoloads/hud/images/actions/RopePressed.png"
-dest_files=[ "res://.import/RopePressed.png-64af426fab1daefd9e3ab2174897002c.stex" ]
+source_file="res://world/assets/cacto_01/cacto_01.png"
+dest_files=[ "res://.import/cacto_01.png-c92f75ba3ec68ea29f81ef0af36d994d.stex" ]
 
 [params]
 

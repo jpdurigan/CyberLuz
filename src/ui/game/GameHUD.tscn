@@ -1,17 +1,17 @@
 [gd_scene load_steps=16 format=2]
 
-[ext_resource path="res://autoloads/hud/images/actions/button_action_rope.png" type="Texture" id=1]
-[ext_resource path="res://autoloads/hud/images/actions/button_action_tapioca.png" type="Texture" id=2]
-[ext_resource path="res://autoloads/hud/images/actions/button_action_gun.png" type="Texture" id=3]
-[ext_resource path="res://autoloads/hud/images/buttons/button_config.png" type="Texture" id=4]
-[ext_resource path="res://autoloads/hud/images/buttons/button_pause.png" type="Texture" id=5]
-[ext_resource path="res://autoloads/hud/images/actions/GunPressed.png" type="Texture" id=6]
-[ext_resource path="res://autoloads/hud/images/player_health/player_health_bar_over.png" type="Texture" id=7]
-[ext_resource path="res://autoloads/hud/images/player_health/player_health_bar_decoration.png" type="Texture" id=8]
-[ext_resource path="res://autoloads/hud/images/actions/TapiocaPressed.png" type="Texture" id=9]
-[ext_resource path="res://autoloads/hud/images/actions/RopePressed.png" type="Texture" id=10]
-[ext_resource path="res://autoloads/hud/images/player_health/player_health_bar_progress.png" type="Texture" id=11]
-[ext_resource path="res://autoloads/hud/images/player_health/player_health_bar_under.png" type="Texture" id=12]
+[ext_resource path="res://ui/game/images/actions/button_action_rope.png" type="Texture" id=1]
+[ext_resource path="res://ui/game/images/actions/button_action_tapioca.png" type="Texture" id=2]
+[ext_resource path="res://ui/game/images/actions/button_action_gun.png" type="Texture" id=3]
+[ext_resource path="res://ui/game/images/buttons/button_config.png" type="Texture" id=4]
+[ext_resource path="res://ui/game/images/buttons/button_pause.png" type="Texture" id=5]
+[ext_resource path="res://ui/game/images/actions/GunPressed.png" type="Texture" id=6]
+[ext_resource path="res://ui/game/images/player_health/player_health_bar_over.png" type="Texture" id=7]
+[ext_resource path="res://ui/game/images/player_health/player_health_bar_decoration.png" type="Texture" id=8]
+[ext_resource path="res://ui/game/images/actions/TapiocaPressed.png" type="Texture" id=9]
+[ext_resource path="res://ui/game/images/actions/RopePressed.png" type="Texture" id=10]
+[ext_resource path="res://ui/game/images/player_health/player_health_bar_progress.png" type="Texture" id=11]
+[ext_resource path="res://ui/game/images/player_health/player_health_bar_under.png" type="Texture" id=12]
 [ext_resource path="res://ui/game/PauseButton.gd" type="Script" id=13]
 [ext_resource path="res://ui/game/ConfigButton.gd" type="Script" id=14]
 [ext_resource path="res://ui/game/GameHUD.gd" type="Script" id=15]
@@ -100,7 +100,6 @@ __meta__ = {
 }
 
 [node name="Actions" type="Control" parent="."]
-visible = false
 anchor_top = 1.0
 anchor_bottom = 1.0
 margin_left = 10.6908
@@ -135,6 +134,3 @@ margin_bottom = 821.048
 rect_scale = Vector2( 0.25, 0.25 )
 texture_normal = ExtResource( 2 )
 texture_pressed = ExtResource( 9 )
-__meta__ = {
-"_edit_use_anchors_": false
-}

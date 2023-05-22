@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/button_action_tapioca.png-11d16ceb730fde5b2e444291d601771c.stex"
+path="res://.import/TapiocaPressed.png-6d64059574812bbccabd8ff1cb1b6bd5.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://autoloads/hud/images/actions/button_action_tapioca.png"
-dest_files=[ "res://.import/button_action_tapioca.png-11d16ceb730fde5b2e444291d601771c.stex" ]
+source_file="res://ui/game/images/actions/TapiocaPressed.png"
+dest_files=[ "res://.import/TapiocaPressed.png-6d64059574812bbccabd8ff1cb1b6bd5.stex" ]
 
 [params]
 

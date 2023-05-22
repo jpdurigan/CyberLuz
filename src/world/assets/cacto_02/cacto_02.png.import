@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/cacto1.png-8dc78f957e390cec76d0f81806c5ba7b.stex"
+path="res://.import/cacto_02.png-b96460e1d1e10a0e92938382f17aa793.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Props/cacto1.png"
-dest_files=[ "res://.import/cacto1.png-8dc78f957e390cec76d0f81806c5ba7b.stex" ]
+source_file="res://world/assets/cacto_02/cacto_02.png"
+dest_files=[ "res://.import/cacto_02.png-b96460e1d1e10a0e92938382f17aa793.stex" ]
 
 [params]
 

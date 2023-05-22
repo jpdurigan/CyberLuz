@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/player_health_bar_decoration.png-761a35a65f49a9b749880450b597d0b1.stex"
+path="res://.import/player_health_bar_under.png-9265b07a273c475dd208d70840be0669.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://autoloads/hud/images/player_health/player_health_bar_decoration.png"
-dest_files=[ "res://.import/player_health_bar_decoration.png-761a35a65f49a9b749880450b597d0b1.stex" ]
+source_file="res://ui/game/images/player_health/player_health_bar_under.png"
+dest_files=[ "res://.import/player_health_bar_under.png-9265b07a273c475dd208d70840be0669.stex" ]
 
 [params]
 

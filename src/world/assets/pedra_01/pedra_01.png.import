@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/GunPressed.png-8d6dc34da4073eadcfb16db9dcdc6878.stex"
+path="res://.import/pedra_01.png-05f95be6a4f175f2c40cb775d6a676f2.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://autoloads/hud/images/actions/GunPressed.png"
-dest_files=[ "res://.import/GunPressed.png-8d6dc34da4073eadcfb16db9dcdc6878.stex" ]
+source_file="res://world/assets/pedra_01/pedra_01.png"
+dest_files=[ "res://.import/pedra_01.png-05f95be6a4f175f2c40cb775d6a676f2.stex" ]
 
 [params]
 
