@@ -1,5 +1,7 @@
 extends Node
 
+var item_spawner: Node2D = null
+
 onready var state_machine: StateMachine = $StateMachine
 
 func set_game_mode() -> void:

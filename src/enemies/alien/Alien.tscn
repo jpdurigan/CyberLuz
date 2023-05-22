@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=2]
+[gd_scene load_steps=48 format=2]
 
 [ext_resource path="res://enemies/alien/images/attack/alien_attack_2.png" type="Texture" id=1]
 [ext_resource path="res://enemies/alien/images/attack/alien_attack_4.png" type="Texture" id=2]
@@ -16,6 +16,8 @@
 [ext_resource path="res://enemies/alien/states/AttackPlayer.gd" type="Script" id=14]
 [ext_resource path="res://enemies/alien/states/FollowPlayer.gd" type="Script" id=15]
 [ext_resource path="res://components/DetectionArea.gd" type="Script" id=16]
+[ext_resource path="res://enemies/alien/states/Die.gd" type="Script" id=17]
+[ext_resource path="res://items/tapioca/Tapioca.tscn" type="PackedScene" id=18]
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -755,3 +757,8 @@ attack_area_path = NodePath("../../AttackArea")
 
 [node name="Timer" type="Timer" parent="StateMachine/AttackPlayer"]
 one_shot = true
+
+[node name="Die" type="Node" parent="StateMachine"]
+script = ExtResource( 17 )
+items = [ ExtResource( 18 ) ]
+chance = 1.0

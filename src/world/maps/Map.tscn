@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://world/maps/Map.gd" type="Script" id=1]
 [ext_resource path="res://player/Player.tscn" type="PackedScene" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://components/camera/GameCamera.gd" type="Script" id=10]
 [ext_resource path="res://ui/start/images/BG.png" type="Texture" id=11]
 [ext_resource path="res://items/tapioca/Tapioca.tscn" type="PackedScene" id=12]
+[ext_resource path="res://world/maps/ItemSpawner.gd" type="Script" id=13]
 
 [node name="Map" type="Node2D"]
 script = ExtResource( 1 )
@@ -28,6 +29,7 @@ centered = false
 [node name="GameCamera" type="Camera2D" parent="."]
 position = Vector2( 518, 306 )
 current = true
+zoom = Vector2( 2, 2 )
 script = ExtResource( 10 )
 target_path = NodePath("../Entities/Player")
 
@@ -89,3 +91,6 @@ position = Vector2( -518, 914 )
 
 [node name="Alien" parent="Entities" instance=ExtResource( 4 )]
 position = Vector2( 1127, 682 )
+
+[node name="ItemSpawner" type="YSort" parent="Entities"]
+script = ExtResource( 13 )

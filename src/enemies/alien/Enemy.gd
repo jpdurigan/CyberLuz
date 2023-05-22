@@ -1,6 +1,8 @@
 class_name Enemy
 extends KinematicBody2D
 
+signal is_dead
+
 const ANIM_WALK_BLEND_POSITION = "parameters/state_machine/walk/blend_position"
 const ANIM_IDLE_BLEND_POSITION = "parameters/state_machine/idle/blend_position"
 const ANIM_DAMAGE_BLEND_POSITION = "parameters/state_machine/damage/blend_position"
@@ -33,7 +35,7 @@ func _physics_process(_delta):
 func take_damage(value: float) -> void:
 	_life_current -= value
 	if is_dead():
-		queue_free()
+		emit_signal("is_dead")
 	else:
 		_animation_state_machine.travel("damage")
 
