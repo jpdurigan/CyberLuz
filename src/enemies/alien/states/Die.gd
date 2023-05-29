@@ -26,7 +26,7 @@ func spawn_item() -> void:
 		
 		var random_item: Item = random_item_scene.instance()
 		random_item.global_position = _alien.global_position
-		Global.item_spawner.add_child(random_item)
+		Global.item_spawner.call_deferred("add_child", random_item)
 
 
 func _queue_free() -> void:

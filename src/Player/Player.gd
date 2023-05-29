@@ -2,7 +2,7 @@ class_name Player
 extends KinematicBody2D
 
 const ANIM_WALK_BLEND_POSITION = "parameters/state_machine/walk/blend_position"
-const ANIM_IDLE_BLEND_POSITION = "parameters/state_machine/idle/blend_position"
+#const ANIM_IDLE_BLEND_POSITION = "parameters/state_machine/idle/blend_position"
 const ANIM_DAMAGE_BLEND_POSITION = "parameters/state_machine/damage/blend_position"
 const ANIM_STATE_MACHINE_PLAYBACK = "parameters/state_machine/playback"
 
@@ -18,7 +18,7 @@ onready var _animation_tree: AnimationTree = $AnimationTree
 onready var _animation_state_machine: AnimationNodeStateMachinePlayback = _animation_tree.get(ANIM_STATE_MACHINE_PLAYBACK)
 
 onready var _shooter: Shooter = $Shooter
-onready var _untie_area: Area2D = $UntieArea
+onready var _untie_area: Area2D = $AnimatedSprite/UntieArea
 
 func _ready():
 	_speed_current = speed_min
@@ -58,9 +58,8 @@ func _move():
 		Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
 	)
 	
-	_animation_tree.set(ANIM_WALK_BLEND_POSITION, input_direction)
+	_animation_tree.set(ANIM_WALK_BLEND_POSITION, input_direction.x)
 	if input_direction.length_squared() > 0:
-		_animation_tree.set(ANIM_IDLE_BLEND_POSITION, input_direction.x)
 		_animation_tree.set(ANIM_DAMAGE_BLEND_POSITION, input_direction.x)
 		if _animation_state_machine.get_current_node() == "idle":
 			_animation_state_machine.travel("walk")
