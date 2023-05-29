@@ -21,4 +21,4 @@ margin_top = 28.0
 margin_right = 997.0
 margin_bottom = 128.0
 text = "VOLTAR"
-_scene_path = "res://ui/startscreen/StartScreen.tscn"
+_scene_path = "res://ui/start/StartScreen.tscn"

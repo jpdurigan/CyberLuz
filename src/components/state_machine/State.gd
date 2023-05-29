@@ -2,7 +2,7 @@ class_name State
 extends Node
 
 
-func enter(msg: Dictionary) -> void:
+func enter(_msg: Dictionary) -> void:
 	pass
 
 func exit() -> Dictionary:
@@ -10,11 +10,11 @@ func exit() -> Dictionary:
 	return msg
 
 
-func unhandled_input(event: InputEvent) -> void:
+func unhandled_input(_event: InputEvent) -> void:
 	pass
 
-func process(delta: float) -> void:
+func process(_delta: float) -> void:
 	pass
 
-func physics_process(delta: float) -> void:
+func physics_process(_delta: float) -> void:
 	pass

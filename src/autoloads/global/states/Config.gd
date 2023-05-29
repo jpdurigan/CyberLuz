@@ -1,7 +1,7 @@
 extends State
 
 
-func enter(msg: Dictionary) -> void:
+func enter(_msg: Dictionary) -> void:
 	HUD.show_config_screen()
 	get_tree().paused = true
 

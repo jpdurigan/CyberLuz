@@ -25,7 +25,7 @@ func _ready():
 	_life_current = life_max
 	HUD.update_health(_life_current, life_max, 0)
 
-func _unhandled_input(event: InputEvent):
+func _unhandled_input(_event: InputEvent):
 	if Input.is_action_just_pressed("shoot"):
 		if _untie_area.has_overlapping_civil():
 			_untie_area.civil.untie()

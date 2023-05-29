@@ -36,6 +36,7 @@ func change_to(scene_path: String) -> void:
 
 func _on_load_success() -> void:
 	var next_scene: PackedScene = _loader.get_resource()
+# warning-ignore-all:return_value_discarded
 	get_tree().change_scene_to(next_scene)
 	_scene_path = ""
 	_loader = null

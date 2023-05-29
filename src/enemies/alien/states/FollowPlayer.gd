@@ -7,7 +7,7 @@ onready var _attack_area: DetectionArea = get_node(attack_area_path)
 
 onready var _alien : KinematicBody2D = owner as KinematicBody2D
 
-func enter(msg: Dictionary) -> void:
+func enter(_msg: Dictionary) -> void:
 	if _player_area.player == null:
 		transition_to("Wander")
 		return
@@ -21,7 +21,7 @@ func exit() -> Dictionary:
 	return {}
 
 
-func physics_process(delta: float):
+func physics_process(_delta: float):
 	if _player_area.player:
 		_alien.target = _player_area.player.global_position
 

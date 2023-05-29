@@ -10,7 +10,7 @@ func _ready():
 	_alien.connect("is_dead", self, "_on_alien_is_dead")
 
 
-func enter(msg: Dictionary) -> void:
+func enter(_msg: Dictionary) -> void:
 	spawn_item()
 	call_deferred("_queue_free")
 
@@ -21,6 +21,7 @@ func spawn_item() -> void:
 	
 	var should_spawn: bool = randf() <= chance
 	if should_spawn:
+# warning-ignore:narrowing_conversion
 		var random_idx: int = floor(rand_range(0, items.size()))
 		var random_item_scene: PackedScene = items[random_idx]
 		

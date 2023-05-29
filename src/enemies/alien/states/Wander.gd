@@ -14,7 +14,7 @@ onready var _alien : Enemy = owner as KinematicBody2D
 onready var _initial_position : Vector2 = _alien.global_position
 
 
-func enter(msg: Dictionary) -> void:
+func enter(_msg: Dictionary) -> void:
 	_timer.connect("timeout", self, "_on_timer_timeout")
 	_player_area.connect("player_entered", self, "_on_player_area_player_entered")
 	_pick_new_target()
@@ -25,7 +25,7 @@ func exit() -> Dictionary:
 	return {}
 
 
-func physics_process(delta: float):
+func physics_process(_delta: float):
 	if !_is_waiting() and _alien.is_at_target:
 		_timer.wait_time = _get_wait_time()
 		_timer.start()

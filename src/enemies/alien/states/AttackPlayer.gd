@@ -10,7 +10,7 @@ onready var _timer: Timer = $Timer
 onready var _alien : KinematicBody2D = owner as KinematicBody2D
 
 
-func enter(msg: Dictionary) -> void:
+func enter(_msg: Dictionary) -> void:
 	_timer.connect("timeout", self, "_on_timer_timeout")
 	_attack_area.connect("player_exited", self, "_on_attack_area_player_exited")
 	attack()
