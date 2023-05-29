@@ -33,6 +33,7 @@ func _unhandled_input(_event: InputEvent):
 			_shooter.shoot()
 
 func _physics_process(_delta):
+	_set_idle_blend_position()
 	_move()
 
 
@@ -60,7 +61,6 @@ func _move():
 	
 	_animation_tree.set(ANIM_WALK_BLEND_POSITION, input_direction.x)
 	if input_direction.length_squared() > 0:
-		_animation_tree.set(ANIM_IDLE_BLEND_POSITION, input_direction.x)
 		_animation_tree.set(ANIM_DAMAGE_BLEND_POSITION, input_direction.x)
 		if _animation_state_machine.get_current_node() == "idle":
 			_animation_state_machine.travel("walk")
@@ -73,3 +73,8 @@ func _move():
 		_speed_current = speed_min
 	
 	move_and_slide(input_direction * _speed_current)
+
+
+func _set_idle_blend_position() -> void:
+	var blend_position = get_local_mouse_position().x
+	_animation_tree.set(ANIM_IDLE_BLEND_POSITION, blend_position)
