@@ -6,6 +6,8 @@ export var rate: float = 2
 
 var target: Vector2
 
+export var pivot_node_path := NodePath(".")
+onready var _pivot_node: Node2D = get_node(pivot_node_path) as Node2D
 onready var _timer: Timer = $Timer
 
 
@@ -29,7 +31,7 @@ func _get_wait_time() -> float:
 
 
 func _aim():
-	look_at(target)
+	_pivot_node.look_at(target)
 
 func _shoot():
 	var bullet: Node2D = bullet_scene.instance()

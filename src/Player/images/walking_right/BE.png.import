@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/walking_right_1.png-22c6c24eadd9e57caa3b6acce54b4e0f.stex"
+path="res://.import/BE.png-092c93e152211ad41a1ed0348463f24a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://player/images/walking_right/walking_right_1.png"
-dest_files=[ "res://.import/walking_right_1.png-22c6c24eadd9e57caa3b6acce54b4e0f.stex" ]
+source_file="res://player/images/walking_right/BE.png"
+dest_files=[ "res://.import/BE.png-092c93e152211ad41a1ed0348463f24a.stex" ]
 
 [params]
 

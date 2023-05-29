@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/walking_right_4.png-ffe46eb89b88d7a0be95ee4916025b99.stex"
+path="res://.import/bala.png-da0d1f59f1ca5afce2b9164e2b5d903b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://player/images/walking_right/walking_right_4.png"
-dest_files=[ "res://.import/walking_right_4.png-ffe46eb89b88d7a0be95ee4916025b99.stex" ]
+source_file="res://components/bullet/bala.png"
+dest_files=[ "res://.import/bala.png-da0d1f59f1ca5afce2b9164e2b5d903b.stex" ]
 
 [params]
 
