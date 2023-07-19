@@ -1,9 +1,9 @@
 [gd_scene load_steps=14 format=3 uid="uid://clb4fxhmcvlhd"]
 
 [ext_resource type="Script" path="res://world/maps/Map.gd" id="1"]
-[ext_resource type="PackedScene" path="res://player/Player.tscn" id="2"]
-[ext_resource type="PackedScene" path="res://civilians/civil1/Civil1.tscn" id="3"]
-[ext_resource type="PackedScene" path="res://enemies/alien/Alien.tscn" id="4"]
+[ext_resource type="PackedScene" uid="uid://c10ul1m7yn577" path="res://player/Player.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://bo707bwyarg5e" path="res://civilians/civil1/Civil1.tscn" id="3"]
+[ext_resource type="PackedScene" uid="uid://be5osluu1wfc" path="res://enemies/alien/Alien.tscn" id="4"]
 [ext_resource type="PackedScene" path="res://world/assets/cacto_01/Cacto01.tscn" id="5"]
 [ext_resource type="PackedScene" uid="uid://c255r610lc28i" path="res://world/assets/pedra_01/Pedra01.tscn" id="6"]
 [ext_resource type="PackedScene" path="res://world/assets/cacto_03/Cacto03.tscn" id="7"]
@@ -28,7 +28,7 @@ centered = false
 
 [node name="GameCamera" type="Camera2D" parent="."]
 position = Vector2(518, 306)
-zoom = Vector2(2, 2)
+zoom = Vector2(0.5, 0.5)
 script = ExtResource("10")
 target_path = NodePath("../Entities/Player")
 

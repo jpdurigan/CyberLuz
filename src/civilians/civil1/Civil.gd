@@ -21,7 +21,7 @@ var is_at_target: bool = false
 var _speed_current: float
 #var _life_current: float
 
-@onready var _animation_player: AnimationPlayer = $AnimationPlayer
+#@onready var _animation_player: AnimationPlayer = $AnimationPlayer
 @onready var _animation_tree: AnimationTree = $AnimationTree
 @onready var _animation_state_machine: AnimationNodeStateMachinePlayback = _animation_tree.get(ANIM_STATE_MACHINE_PLAYBACK)
 

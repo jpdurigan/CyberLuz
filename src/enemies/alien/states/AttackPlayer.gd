@@ -7,7 +7,7 @@ extends AutoForwardState
 @onready var _attack_area: DetectionArea = get_node(attack_area_path)
 
 @onready var _timer: Timer = $Timer
-@onready var _alien : CharacterBody2D = owner as CharacterBody2D
+#@onready var _alien : CharacterBody2D = owner as CharacterBody2D
 
 
 func enter(_msg: Dictionary) -> void:

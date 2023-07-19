@@ -1,18 +1,10 @@
-[gd_resource type="Theme" load_steps=7 format=3 uid="uid://cnerh81w7o6it"]
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://cnerh81w7o6it"]
 
 [ext_resource type="FontFile" uid="uid://bd6bxa8nwl8gm" path="res://ui/resources/fonts/ocr_a_extended_regular.TTF" id="1_n2346"]
-[ext_resource type="Texture2D" uid="uid://be7p1vak4ptd4" path="res://ui/resources/buttons/images/button_normal_150h.png" id="2"]
-[ext_resource type="Texture2D" uid="uid://bqn7fomjou07f" path="res://ui/resources/buttons/images/button_pressed_150h.png" id="3"]
-
-[sub_resource type="StyleBoxTexture" id="2"]
-texture = ExtResource("3")
-region_rect = Rect2(0, 0, 335, 150)
+[ext_resource type="StyleBox" uid="uid://hv13sqmd116x" path="res://ui/resources/panels/panel_button_green_light.tres" id="4_pjumc"]
+[ext_resource type="StyleBox" uid="uid://c8ucqigbt2ppy" path="res://ui/resources/panels/panel_button_green_dark.tres" id="5_bkwki"]
 
 [sub_resource type="StyleBoxEmpty" id="3"]
-
-[sub_resource type="StyleBoxTexture" id="1"]
-texture = ExtResource("2")
-region_rect = Rect2(0, 0, 335, 150)
 
 [resource]
 Button/colors/font_color = Color(0.45098, 0.309804, 0.54902, 1)
@@ -22,8 +14,8 @@ Button/colors/font_color_hover = Color(0.571083, 0.2926, 0.77, 1)
 Button/colors/font_color_pressed = Color(0.960784, 0.682353, 0.2, 1)
 Button/font_sizes/font_size = 36
 Button/fonts/font = ExtResource("1_n2346")
-Button/styles/disabled = SubResource("2")
+Button/styles/disabled = ExtResource("5_bkwki")
 Button/styles/focus = SubResource("3")
-Button/styles/hover = SubResource("1")
-Button/styles/normal = SubResource("1")
-Button/styles/pressed = SubResource("2")
+Button/styles/hover = ExtResource("4_pjumc")
+Button/styles/normal = ExtResource("4_pjumc")
+Button/styles/pressed = ExtResource("5_bkwki")

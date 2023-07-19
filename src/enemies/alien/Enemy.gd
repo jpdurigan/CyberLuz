@@ -35,7 +35,7 @@ func _physics_process(_delta):
 func take_damage(value: float) -> void:
 	_life_current -= value
 	if is_dead():
-		emit_signal("is_dead")
+		dying.emit()
 	else:
 		_animation_state_machine.travel("damage")
 

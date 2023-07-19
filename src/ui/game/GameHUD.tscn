@@ -18,8 +18,12 @@
 
 [node name="Game" type="Control"]
 layout_mode = 3
-anchors_preset = 10
+anchors_preset = 15
 anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("15")
 
 [node name="PlayerHealth" type="Control" parent="."]
@@ -33,7 +37,7 @@ offset_right = 354.0
 offset_bottom = 97.0
 texture = ExtResource("7")
 expand_mode = 1
-stretch_mode = 6
+stretch_mode = 5
 
 [node name="Progress" type="TextureProgressBar" parent="PlayerHealth/Border"]
 show_behind_parent = true
@@ -85,6 +89,8 @@ custom_minimum_size = Vector2(44, 48)
 layout_mode = 2
 texture_normal = ExtResource("4")
 texture_pressed = ExtResource("4")
+ignore_texture_size = true
+stretch_mode = 5
 script = ExtResource("14")
 
 [node name="Pause" type="TextureButton" parent="Buttons/List"]
@@ -92,16 +98,19 @@ custom_minimum_size = Vector2(44, 48)
 layout_mode = 2
 texture_normal = ExtResource("5")
 texture_pressed = ExtResource("5")
+ignore_texture_size = true
+stretch_mode = 5
 script = ExtResource("13")
 
 [node name="Actions" type="Control" parent="."]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 10.6908
-offset_top = 367.65
-offset_right = 402.691
-offset_bottom = 671.65
+offset_top = -230.0
+offset_right = 392.0
+offset_bottom = 74.0001
+grow_vertical = 0
 scale = Vector2(0.75, 0.75)
 
 [node name="AttackButton" type="TextureButton" parent="Actions"]

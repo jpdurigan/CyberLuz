@@ -1,12 +1,14 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=3 format=3 uid="uid://cyk85j1mtphdj"]
 
-[ext_resource path="res://components/DetectionArea.gd" type="Script" id=1]
-[ext_resource path="res://items/Item.gd" type="Script" id=2]
+[ext_resource type="Script" path="res://components/DetectionArea.gd" id="1"]
+[ext_resource type="Script" path="res://items/Item.gd" id="2"]
 
 [node name="Item" type="Node2D"]
-script = ExtResource( 2 )
+script = ExtResource("2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
 [node name="DetectionArea" type="Area2D" parent="."]
-script = ExtResource( 1 )
+collision_layer = 256
+collision_mask = 2
+script = ExtResource("1")

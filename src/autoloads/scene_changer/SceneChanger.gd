@@ -14,7 +14,6 @@ func _ready():
 
 func _process(_delta):
 	var status := ResourceLoader.load_threaded_get_status(_scene_path, _progress)
-	printt(_scene_path, _progress)
 	match status:
 		ResourceLoader.THREAD_LOAD_INVALID_RESOURCE, \
 		ResourceLoader.THREAD_LOAD_FAILED:

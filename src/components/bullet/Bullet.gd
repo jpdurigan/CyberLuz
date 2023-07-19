@@ -5,7 +5,7 @@ const WAIT_TIME = 2
 @export var velocity: float = 1000.0
 @export var damage: float = 5.0
 
-@onready var _timer: Timer = $Timer
+#@onready var _timer: Timer = $Timer
 @onready var _visibility_notifier: VisibleOnScreenNotifier2D = $VisibleOnScreenNotifier2D
 @onready var _detection_area: DetectionArea = $DetectionArea
 
