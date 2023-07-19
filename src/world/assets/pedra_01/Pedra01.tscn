@@ -1,15 +1,15 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=3 format=3 uid="uid://c255r610lc28i"]
 
-[ext_resource path="res://world/assets/pedra_01/pedra_01.png" type="Texture2D" id=1]
+[ext_resource type="Texture2D" uid="uid://dfa6ma20ngeoe" path="res://world/assets/pedra_01/pedra_01.png" id="1"]
 
-[sub_resource type="CircleShape2D" id=1]
+[sub_resource type="CircleShape2D" id="1"]
 radius = 16.2788
 
 [node name="Pedra01" type="StaticBody2D"]
 
 [node name="Pedra01" type="Sprite2D" parent="."]
-texture = ExtResource( 1 )
+texture = ExtResource("1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 1, 0 )
-shape = SubResource( 1 )
+position = Vector2(1, 0)
+shape = SubResource("1")

@@ -11,8 +11,8 @@ const WAIT_TIME = 2
 
 
 func _ready():
-	_detection_area.connect("entered", Callable(self, "_on_entered"))
-	_visibility_notifier.connect("screen_exited", Callable(self, "_on_screen_exited"))
+	_detection_area.entered.connect(_on_entered)
+	_visibility_notifier.screen_exited.connect(_on_screen_exited)
 	set_as_top_level(true)
 
 func _physics_process(delta) -> void:

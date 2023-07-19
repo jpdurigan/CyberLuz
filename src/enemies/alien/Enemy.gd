@@ -1,7 +1,7 @@
 class_name Enemy
 extends CharacterBody2D
 
-signal is_dead
+signal dying
 
 const ANIM_WALK_BLEND_POSITION = "parameters/state_machine/walk/blend_position"
 const ANIM_IDLE_BLEND_POSITION = "parameters/state_machine/idle/blend_position"

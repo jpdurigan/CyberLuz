@@ -7,7 +7,7 @@ extends AutoForwardState
 
 
 func _ready():
-	_alien.connect("is_dead", Callable(self, "_on_alien_is_dead"))
+	_alien.dying.connect(_on_alien_dying)
 
 
 func enter(_msg: Dictionary) -> void:
@@ -21,7 +21,6 @@ func spawn_item() -> void:
 	
 	var should_spawn: bool = randf() <= chance
 	if should_spawn:
-# warning-ignore:narrowing_conversion
 		var random_idx: int = floor(randf_range(0, items.size()))
 		var random_item_scene: PackedScene = items[random_idx]
 		
@@ -33,5 +32,5 @@ func spawn_item() -> void:
 func _queue_free() -> void:
 	_alien.queue_free()
 
-func _on_alien_is_dead() -> void:
+func _on_alien_dying() -> void:
 	transition_to("Die")

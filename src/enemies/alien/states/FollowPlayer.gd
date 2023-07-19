@@ -12,12 +12,12 @@ func enter(_msg: Dictionary) -> void:
 		transition_to("Wander")
 		return
 	
-	_player_area.connect("player_exited", Callable(self, "_on_player_area_player_exited"))
-	_attack_area.connect("player_entered", Callable(self, "_on_attack_area_player_entered"))
+	_player_area.player_exited.connect(_on_player_area_player_exited)
+	_attack_area.player_entered.connect(_on_attack_area_player_entered)
 
 func exit() -> Dictionary:
-	_player_area.disconnect("player_exited", Callable(self, "_on_player_area_player_exited"))
-	_attack_area.disconnect("player_entered", Callable(self, "_on_attack_area_player_entered"))
+	_player_area.player_exited.disconnect(_on_player_area_player_exited)
+	_attack_area.player_entered.disconnect(_on_attack_area_player_entered)
 	return {}
 
 

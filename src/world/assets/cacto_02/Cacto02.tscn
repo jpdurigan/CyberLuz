@@ -1,15 +1,15 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=3 format=3 uid="uid://bn3k0d3yjywxp"]
 
-[ext_resource path="res://world/assets/cacto_02/cacto_02.png" type="Texture2D" id=1]
+[ext_resource type="Texture2D" uid="uid://gu58o817juph" path="res://world/assets/cacto_02/cacto_02.png" id="1"]
 
-[sub_resource type="CircleShape2D" id=1]
+[sub_resource type="CircleShape2D" id="1"]
 radius = 37.2156
 
 [node name="Cacto02" type="StaticBody2D"]
 
 [node name="Cacto02" type="Sprite2D" parent="."]
-position = Vector2( 0, -64 )
-texture = ExtResource( 1 )
+position = Vector2(0, -64)
+texture = ExtResource("1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
+shape = SubResource("1")

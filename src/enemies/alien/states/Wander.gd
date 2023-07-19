@@ -10,18 +10,18 @@ extends AutoForwardState
 var _target: Vector2
 
 @onready var _timer : Timer = $Timer
-@onready var _alien : Enemy = owner as CharacterBody2D
+@onready var _alien : Enemy = owner as Enemy
 @onready var _initial_position : Vector2 = _alien.global_position
 
 
 func enter(_msg: Dictionary) -> void:
-	_timer.connect("timeout", Callable(self, "_on_timer_timeout"))
-	_player_area.connect("player_entered", Callable(self, "_on_player_area_player_entered"))
+	_timer.timeout.connect(_on_timer_timeout)
+	_player_area.player_entered.connect(_on_player_area_player_entered)
 	_pick_new_target()
 
 func exit() -> Dictionary:
-	_timer.disconnect("timeout", Callable(self, "_on_timer_timeout"))
-	_player_area.disconnect("player_entered", Callable(self, "_on_player_area_player_entered"))
+	_timer.timeout.disconnect(_on_timer_timeout)
+	_player_area.player_entered.disconnect(_on_player_area_player_entered)
 	return {}
 
 

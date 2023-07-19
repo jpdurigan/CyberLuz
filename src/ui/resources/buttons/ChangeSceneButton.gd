@@ -4,11 +4,7 @@ extends Button
 var scene_path: String
 
 
-func _ready():
-	connect("pressed", Callable(self, "_on_pressed"))
-
-
-func _on_pressed():
+func _pressed():
 	SceneChanger.change_to(scene_path)
 
 
@@ -45,7 +41,7 @@ func _get_property_list() -> Array:
 			"name": "_scene_path",
 			"type": TYPE_STRING,
 			"hint": PROPERTY_HINT_GLOBAL_FILE,
-			"usage": PROPERTY_USAGE_NOEDITOR,
+			"usage": PROPERTY_USAGE_NO_EDITOR,
 		}
 	])
 	

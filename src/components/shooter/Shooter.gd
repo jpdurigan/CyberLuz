@@ -12,7 +12,7 @@ var target: Vector2
 
 
 func _ready():
-	_timer.connect("timeout", Callable(self, "_on_timer_timeout"))
+	_timer.timeout.connect(_on_timer_timeout)
 
 func _physics_process(_delta):
 	_aim()
