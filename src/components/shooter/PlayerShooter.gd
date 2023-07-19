@@ -6,7 +6,7 @@ func _should_shoot() -> bool:
 
 func _aim():
 	target = get_global_mouse_position()
-	._aim()
+	super._aim()
 
 func _on_timer_timeout():
 	if Input.is_action_pressed("shoot"):

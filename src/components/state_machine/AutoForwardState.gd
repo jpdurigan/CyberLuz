@@ -1,7 +1,7 @@
 class_name AutoForwardState
 extends State
 
-onready var _state_machine: StateMachine = _get_state_machine()
+@onready var _state_machine: StateMachine = _get_state_machine()
 
 
 func transition_to(next_state: String) -> void:

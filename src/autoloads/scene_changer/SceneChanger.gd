@@ -1,10 +1,10 @@
 extends CanvasLayer
 
-var _loader: ResourceInteractiveLoader = null
+var _loader: ResourceLoader = null
 var _scene_path: String = ""
 
-onready var _progress: ProgressBar = $Control/ProgressBar
-onready var _tween: Tween = $Tween
+@onready var _progress: ProgressBar = $Control/ProgressBar
+@onready var _tween: Tween = $Tween
 
 func _ready():
 	set_process(false)
@@ -28,7 +28,7 @@ func _process(_delta):
 
 func change_to(scene_path: String) -> void:
 	_scene_path = scene_path
-	_loader = ResourceLoader.load_interactive(scene_path, "PackedScene")
+	_loader = ResourceLoader.load_threaded_request(scene_path, "PackedScene")
 	_progress.value = 0
 	_progress.show()
 	set_process(true)
@@ -37,7 +37,7 @@ func change_to(scene_path: String) -> void:
 func _on_load_success() -> void:
 	var next_scene: PackedScene = _loader.get_resource()
 # warning-ignore-all:return_value_discarded
-	get_tree().change_scene_to(next_scene)
+	get_tree().change_scene_to_packed(next_scene)
 	_scene_path = ""
 	_loader = null
 	_progress.value = 0

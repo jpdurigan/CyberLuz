@@ -1,7 +1,7 @@
 [gd_resource type="Theme" load_steps=6 format=2]
 
-[ext_resource path="res://ui/resources/fonts/ocr_a_extended_regular_36pt.tres" type="DynamicFont" id=1]
-[ext_resource path="res://ui/resources/buttons/images/button_pressed_150h.png" type="Texture" id=3]
+[ext_resource path="res://ui/resources/fonts/ocr_a_extended_regular_36pt.tres" type="FontFile" id=1]
+[ext_resource path="res://ui/resources/buttons/images/button_pressed_150h.png" type="Texture2D" id=3]
 
 [sub_resource type="StyleBoxTexture" id=5]
 texture = ExtResource( 3 )

@@ -1,11 +1,11 @@
-tool
+@tool
 extends Button
 
 var scene_path: String
 
 
 func _ready():
-	connect("pressed", self, "_on_pressed")
+	connect("pressed", Callable(self, "_on_pressed"))
 
 
 func _on_pressed():

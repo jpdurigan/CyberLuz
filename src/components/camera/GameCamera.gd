@@ -1,7 +1,7 @@
 extends Camera2D
 
-export var target_path: NodePath
-onready var target: Node2D = get_node_or_null(target_path) as Node2D
+@export var target_path: NodePath
+@onready var target: Node2D = get_node_or_null(target_path) as Node2D
 
 
 func _ready():

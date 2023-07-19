@@ -15,10 +15,10 @@ var enemy: Enemy = null
 var civil: Civil = null
 
 func _ready():
-	connect("area_entered", self, "_on_area_entered")
-	connect("area_exited", self, "_on_area_exited")
-	connect("body_entered", self, "_on_body_entered")
-	connect("body_exited", self, "_on_body_exited")
+	connect("area_entered", Callable(self, "_on_area_entered"))
+	connect("area_exited", Callable(self, "_on_area_exited"))
+	connect("body_entered", Callable(self, "_on_body_entered"))
+	connect("body_exited", Callable(self, "_on_body_exited"))
 
 
 func has_overlapping_player() -> bool:

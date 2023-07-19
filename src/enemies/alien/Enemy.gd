@@ -1,5 +1,5 @@
 class_name Enemy
-extends KinematicBody2D
+extends CharacterBody2D
 
 signal is_dead
 
@@ -8,20 +8,20 @@ const ANIM_IDLE_BLEND_POSITION = "parameters/state_machine/idle/blend_position"
 const ANIM_DAMAGE_BLEND_POSITION = "parameters/state_machine/damage/blend_position"
 const ANIM_STATE_MACHINE_PLAYBACK = "parameters/state_machine/playback"
 
-export(float, 0.0, 500.0, 10.0) var speed_max: float = 150.0
-export(float, 0.0, 500.0, 10.0) var accerelation: float = 100.0
-export(float, 0.0, 200.0, 1.0) var max_distance: float = 36.0
-export(float, 0.0, 250.0, 10.0) var life_max: float = 100.0
+@export var speed_max: float = 150.0 # (float, 0.0, 500.0, 10.0)
+@export var accerelation: float = 100.0 # (float, 0.0, 500.0, 10.0)
+@export var max_distance: float = 36.0 # (float, 0.0, 200.0, 1.0)
+@export var life_max: float = 100.0 # (float, 0.0, 250.0, 10.0)
 
-export var target: Vector2
+@export var target: Vector2
 
 var is_at_target: bool = false
 
 var _speed_current: float
 var _life_current: float
 
-onready var _animation_tree: AnimationTree = $AnimationTree
-onready var _animation_state_machine: AnimationNodeStateMachinePlayback = _animation_tree.get(ANIM_STATE_MACHINE_PLAYBACK)
+@onready var _animation_tree: AnimationTree = $AnimationTree
+@onready var _animation_state_machine: AnimationNodeStateMachinePlayback = _animation_tree.get(ANIM_STATE_MACHINE_PLAYBACK)
 
 
 func _ready():
@@ -63,4 +63,5 @@ func _move():
 		_speed_current = 0.0
 		is_at_target = true
 	
-	move_and_slide(direction * _speed_current)
+	set_velocity(direction * _speed_current)
+	move_and_slide()

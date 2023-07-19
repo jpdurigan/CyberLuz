@@ -10,7 +10,7 @@
 [ext_resource path="res://world/assets/arvore_seca/ArvoreSeca.tscn" type="PackedScene" id=8]
 [ext_resource path="res://world/assets/cacto_02/Cacto02.tscn" type="PackedScene" id=9]
 [ext_resource path="res://components/camera/GameCamera.gd" type="Script" id=10]
-[ext_resource path="res://ui/start/images/BG.png" type="Texture" id=11]
+[ext_resource path="res://ui/start/images/BG.png" type="Texture2D" id=11]
 [ext_resource path="res://items/tapioca/Tapioca.tscn" type="PackedScene" id=12]
 [ext_resource path="res://world/maps/ItemSpawner.gd" type="Script" id=13]
 
@@ -22,7 +22,7 @@ script = ExtResource( 1 )
 [node name="ParallaxLayer" type="ParallaxLayer" parent="InfiniteBg"]
 motion_mirroring = Vector2( 1920, 1080 )
 
-[node name="Bg" type="Sprite" parent="InfiniteBg/ParallaxLayer"]
+[node name="Bg" type="Sprite2D" parent="InfiniteBg/ParallaxLayer"]
 texture = ExtResource( 11 )
 centered = false
 
@@ -33,7 +33,7 @@ zoom = Vector2( 2, 2 )
 script = ExtResource( 10 )
 target_path = NodePath("../Entities/Player")
 
-[node name="Entities" type="YSort" parent="."]
+[node name="Entities" type="Node2D" parent="."]
 
 [node name="Player" parent="Entities" instance=ExtResource( 2 )]
 position = Vector2( 164, 452 )
@@ -60,7 +60,7 @@ accerelation = 300.0
 target = Vector2( 846, 409 )
 initial_direction = -1.0
 
-[node name="World" type="YSort" parent="Entities"]
+[node name="World" type="Node2D" parent="Entities"]
 
 [node name="Cacto02" parent="Entities/World" instance=ExtResource( 9 )]
 position = Vector2( 56, 793 )
@@ -92,5 +92,5 @@ position = Vector2( -518, 914 )
 [node name="Alien" parent="Entities" instance=ExtResource( 4 )]
 position = Vector2( 1127, 682 )
 
-[node name="ItemSpawner" type="YSort" parent="Entities"]
+[node name="ItemSpawner" type="Node2D" parent="Entities"]
 script = ExtResource( 13 )

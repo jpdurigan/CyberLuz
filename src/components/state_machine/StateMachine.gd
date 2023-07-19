@@ -2,12 +2,12 @@ class_name StateMachine
 extends Node
 
 
-export var start_node_path: NodePath
+@export var start_node_path: NodePath
 
 var state: State
 var state_name: String
 
-onready var _start_node: State = get_node_or_null(start_node_path) as State
+@onready var _start_node: State = get_node_or_null(start_node_path) as State
 
 
 func _ready():

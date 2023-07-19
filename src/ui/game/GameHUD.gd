@@ -2,8 +2,8 @@ extends Control
 
 const UPDATE_HEALTH_DURATION = 0.35
 
-onready var _health_progress: TextureProgress = $PlayerHealth/Border/Progress
-onready var _health_tween: Tween = $PlayerHealth/Tween
+@onready var _health_progress: TextureProgressBar = $PlayerHealth/Border/Progress
+@onready var _health_tween: Tween = $PlayerHealth/Tween
 
 func update_health(current_health: float, max_health: float, tween_duration: float = -1.0) -> void:
 	if tween_duration < 0:

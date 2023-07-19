@@ -6,7 +6,7 @@
 [node name="Item" type="Node2D"]
 script = ExtResource( 2 )
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 
 [node name="DetectionArea" type="Area2D" parent="."]
 script = ExtResource( 1 )

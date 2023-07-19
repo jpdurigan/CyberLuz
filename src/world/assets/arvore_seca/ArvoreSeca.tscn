@@ -1,13 +1,13 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://world/assets/arvore_seca/arvore_seca.png" type="Texture" id=1]
+[ext_resource path="res://world/assets/arvore_seca/arvore_seca.png" type="Texture2D" id=1]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 11.1803
 
 [node name="ArvoreSeca" type="StaticBody2D"]
 
-[node name="ArvoreSeca" type="Sprite" parent="."]
+[node name="ArvoreSeca" type="Sprite2D" parent="."]
 position = Vector2( -7, -54 )
 texture = ExtResource( 1 )
 

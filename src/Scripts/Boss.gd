@@ -1,13 +1,13 @@
 extends Area2D
 
-export var boss_life = 1
+@export var boss_life = 1
 
 func _ready():
 	$AnimationPlayer.play()
 		
 func damage():
 	boss_life -= 1
-	$AnimatedSprite.play("damage")
+	$AnimatedSprite2D.play("damage")
 
 func death():
 	if boss_life == 0:
@@ -15,4 +15,4 @@ func death():
 		$Death/Particles_02.visible = true
 		$Death.visible = true
 		$AnimationPlayer.stop()
-		$Sprite.visible = false
+		$Sprite2D.visible = false

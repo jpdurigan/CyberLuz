@@ -2,7 +2,7 @@ extends Node
 
 var item_spawner: Node2D = null
 
-onready var state_machine: StateMachine = $StateMachine
+@onready var state_machine: StateMachine = $StateMachine
 
 func set_game_mode() -> void:
 	state_machine.transition_to("Game")
@@ -21,7 +21,7 @@ var MASTER_BUS = AudioServer.get_bus_index("Master")
 
 var is_mute: bool = false
 var master_volume_db: float = 0.0
-onready var bgm_player: AudioStreamPlayer = $BGM
+@onready var bgm_player: AudioStreamPlayer = $BGM
 
 func set_audio_master_mute(p_is_mute: bool) -> void:
 	is_mute = p_is_mute
