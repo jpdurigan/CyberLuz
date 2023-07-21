@@ -515,6 +515,7 @@ tracks/6/keys = {
 [sub_resource type="Animation" id="37"]
 resource_name = "walk_left"
 length = 0.8
+loop_mode = 1
 step = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -592,6 +593,7 @@ tracks/5/keys = {
 [sub_resource type="Animation" id="34"]
 resource_name = "walk_right"
 length = 0.8
+loop_mode = 1
 step = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -724,9 +726,11 @@ snap = 0.01
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="53"]
 switch_mode = 2
+advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="54"]
 switch_mode = 2
+advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_m3aj4"]
 advance_mode = 2
@@ -744,7 +748,7 @@ states/tied/position = Vector2(216.5, 109.5)
 states/walk/node = SubResource("48")
 states/walk/position = Vector2(736, 101.625)
 transitions = ["tied", "release", SubResource("49"), "release", "resume_untie", SubResource("53"), "resume_untie", "walk", SubResource("54"), "Start", "tied", SubResource("AnimationNodeStateMachineTransition_m3aj4"), "walk", "End", SubResource("AnimationNodeStateMachineTransition_onx8r")]
-graph_offset = Vector2(435.882, 0)
+graph_offset = Vector2(165.966, 0)
 
 [sub_resource type="AnimationNodeBlendTree" id="25"]
 nodes/state_machine/node = SubResource("24")
@@ -803,3 +807,8 @@ script = ExtResource("2")
 
 [node name="Freed" type="Node" parent="StateMachine"]
 script = ExtResource("2")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_desired_distance = 50.0
+target_desired_distance = 50.0
+debug_enabled = true

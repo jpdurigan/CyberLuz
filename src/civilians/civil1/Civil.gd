@@ -13,7 +13,16 @@ const ANIM_STATE_MACHINE_PLAYBACK = "parameters/state_machine/playback"
 @export var max_distance: float = 1.0 # (float, 0.0, 200.0, 1.0)
 #export(float, 0.0, 250.0, 10.0) var life_max: float = 100.0
 
-@export var target: Vector2
+@export var target: Vector2:
+	set(value):
+		_should_block_movement = true
+		target = value
+		if not is_instance_valid(_navigation_agent):
+			await ready
+			await get_tree().physics_frame # Navigation server needs a frame to sync
+		_navigation_agent.target_position = target
+		_should_block_movement = false
+
 @export var initial_direction: float = 1.0: set = _set_initial_direction
 
 var is_at_target: bool = false
@@ -21,9 +30,13 @@ var is_at_target: bool = false
 var _speed_current: float
 #var _life_current: float
 
+var _should_block_movement: bool = false
+
 #@onready var _animation_player: AnimationPlayer = $AnimationPlayer
 @onready var _animation_tree: AnimationTree = $AnimationTree
 @onready var _animation_state_machine: AnimationNodeStateMachinePlayback = _animation_tree.get(ANIM_STATE_MACHINE_PLAYBACK)
+
+@onready var _navigation_agent: NavigationAgent2D = $NavigationAgent2D
 
 func _ready():
 	_speed_current = 0.0
@@ -54,8 +67,12 @@ func resume_untie():
 
 
 func _move():
-	var distance_to_target = global_position.distance_to(target)
-	var direction = global_position.direction_to(target)
+	if _should_block_movement or _navigation_agent.is_navigation_finished():
+		return
+	
+	var next_path_position := _navigation_agent.get_next_path_position()
+	var distance_to_target = global_position.distance_to(next_path_position)
+	var direction = global_position.direction_to(next_path_position)
 	
 	if distance_to_target > max_distance:
 		_animation_tree.set(ANIM_WALK_BLEND_POSITION, direction.x)

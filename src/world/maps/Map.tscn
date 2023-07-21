@@ -3,7 +3,6 @@
 [ext_resource type="Script" path="res://world/maps/Map.gd" id="1"]
 [ext_resource type="PackedScene" uid="uid://c10ul1m7yn577" path="res://player/Player.tscn" id="2"]
 [ext_resource type="PackedScene" uid="uid://bo707bwyarg5e" path="res://civilians/civil1/Civil1.tscn" id="3"]
-[ext_resource type="PackedScene" uid="uid://be5osluu1wfc" path="res://enemies/alien/Alien.tscn" id="4"]
 [ext_resource type="PackedScene" path="res://world/assets/cacto_01/Cacto01.tscn" id="5"]
 [ext_resource type="PackedScene" uid="uid://c255r610lc28i" path="res://world/assets/pedra_01/Pedra01.tscn" id="6"]
 [ext_resource type="PackedScene" path="res://world/assets/cacto_03/Cacto03.tscn" id="7"]
@@ -11,8 +10,13 @@
 [ext_resource type="PackedScene" uid="uid://bn3k0d3yjywxp" path="res://world/assets/cacto_02/Cacto02.tscn" id="9"]
 [ext_resource type="Script" path="res://components/camera/GameCamera.gd" id="10"]
 [ext_resource type="Texture2D" uid="uid://r3phufe5ipo" path="res://ui/start/images/BG.png" id="11"]
-[ext_resource type="PackedScene" path="res://items/tapioca/Tapioca.tscn" id="12"]
+[ext_resource type="PackedScene" uid="uid://bgovgpraae7ea" path="res://items/tapioca/Tapioca.tscn" id="12"]
 [ext_resource type="Script" path="res://world/maps/ItemSpawner.gd" id="13"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_3whu1"]
+vertices = PackedVector2Array(308, -393, 2461, -277, 1154, 1442, 260, 415, -1881, 1256, -275, 387, -1946, -464, -320, -430)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(3, 2, 4, 5), PackedInt32Array(5, 4, 6, 7)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-320, -430, -1946, -464, -1881, 1256, 1154, 1442, 2461, -277, 308, -393, 260, 415, -275, 387)])
 
 [node name="Map" type="Node2D"]
 script = ExtResource("1")
@@ -33,6 +37,7 @@ script = ExtResource("10")
 target_path = NodePath("../Entities/Player")
 
 [node name="Entities" type="Node2D" parent="."]
+y_sort_enabled = true
 
 [node name="Player" parent="Entities" instance=ExtResource("2")]
 position = Vector2(164, 452)
@@ -43,9 +48,9 @@ accerelation = 300.0
 target = Vector2(504, 293)
 
 [node name="Civil2" parent="Entities" instance=ExtResource("3")]
-position = Vector2(624, 442)
+position = Vector2(616, 426)
 accerelation = 300.0
-target = Vector2(624, 442)
+target = Vector2(616, 426)
 
 [node name="Civil3" parent="Entities" instance=ExtResource("3")]
 position = Vector2(741, 258)
@@ -88,8 +93,8 @@ position = Vector2(-326, 793)
 [node name="Tapioca3" parent="Entities" instance=ExtResource("12")]
 position = Vector2(-518, 914)
 
-[node name="Alien" parent="Entities" instance=ExtResource("4")]
-position = Vector2(1127, 682)
-
 [node name="ItemSpawner" type="Node2D" parent="Entities"]
 script = ExtResource("13")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_3whu1")

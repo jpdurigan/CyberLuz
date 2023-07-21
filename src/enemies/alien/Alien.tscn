@@ -690,7 +690,6 @@ transitions = ["idle", "walk", SubResource("19"), "walk", "idle", SubResource("2
 graph_offset = Vector2(98.305, 16)
 
 [sub_resource type="AnimationNodeBlendTree" id="25"]
-graph_offset = Vector2(-380.979, 30.3512)
 nodes/state_machine/node = SubResource("24")
 nodes/state_machine/position = Vector2(-40, 110)
 node_connections = [&"output", 0, &"state_machine"]
