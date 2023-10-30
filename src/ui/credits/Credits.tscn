@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://b4ohrnhaq1aq6"]
+
+[ext_resource type="PackedScene" uid="uid://c4vvm1077ek24" path="res://ui/resources/buttons/ChangeSceneButton.tscn" id="1"]
+[ext_resource type="Texture2D" uid="uid://r3phufe5ipo" path="res://ui/start/images/BG.png" id="1_qpcw8"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_xoai7"]
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="BG" type="TextureRect" parent="."]
+material = SubResource("CanvasItemMaterial_xoai7")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_qpcw8")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Voltar" parent="." instance=ExtResource("1")]
+layout_mode = 0
+offset_left = 747.0
+offset_top = 28.0
+offset_right = 997.0
+offset_bottom = 128.0
+text = "VOLTAR"
+_scene_path = "res://ui/start/StartScreen.tscn"

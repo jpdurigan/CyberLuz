@@ -1,0 +1,15 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://cvqqwn7o3moec"]
+
+[ext_resource type="Texture2D" uid="uid://cvaby7kd11b63" path="res://ui/resources/panels/images/panel_green_dark.png" id="1_rb6mx"]
+
+[resource]
+content_margin_left = 36.0
+content_margin_top = 36.0
+content_margin_right = 36.0
+content_margin_bottom = 36.0
+texture = ExtResource("1_rb6mx")
+texture_margin_left = 105.0
+texture_margin_top = 124.0
+texture_margin_right = 100.0
+texture_margin_bottom = 112.0
+region_rect = Rect2(0, 0, 1033, 942)

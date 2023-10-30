@@ -1,12 +1,12 @@
 extends Node
 
-export(PackedScene) var enemy_scene
+@export var enemy_scene: PackedScene
 
 var score
 
-onready var player = get_node("Player")
+@onready var player = get_node("Player")
 
-export var enemy_speed = 300
+@export var enemy_speed = 300
 
 func _ready() -> void:
 	Global.parent_node_creation = self
@@ -20,7 +20,7 @@ func new_game():
 	$StartTimer.start()
 	
 func _on_MobTimer_timeout():
-	var enemy = enemy_scene.instance()
+	var enemy = enemy_scene.instantiate()
 
 	# Choose a random location on Path2D.
 	var enemy_spawn_location = get_node("EnemyPath/SpawnPoint")
@@ -33,7 +33,7 @@ func _on_MobTimer_timeout():
 	enemy.position = enemy_spawn_location.position
 
 	# Add some randomness to the direction.
-	direction += rand_range(-PI / 4, PI / 4)
+	direction += randf_range(-PI / 4, PI / 4)
 	#player position
 
 	# Spawn the mob by

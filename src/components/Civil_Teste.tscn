@@ -1,0 +1,42 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://civilians/civil1/images/walk/civil1_walk3.png" type="Texture2D" id=1]
+[ext_resource path="res://civilians/civil1/images/walk/civil1_walk2.png" type="Texture2D" id=2]
+[ext_resource path="res://civilians/civil1/images/tied/civil1_tied.png" type="Texture2D" id=3]
+[ext_resource path="res://civilians/civil1/images/walk/civil1_walk1.png" type="Texture2D" id=4]
+[ext_resource path="res://civilians/civil1/images/release/civil1_release.png" type="Texture2D" id=5]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "released",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 2 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "running",
+"speed": 14.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "tied",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 65.3619
+height = 73.6879
+
+[node name="Civil01" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2( 0.25, 0.25 )
+frames = SubResource( 1 )
+animation = "released"
+playing = true
+
+[node name="Rope" type="Area2D" parent="AnimatedSprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Rope"]
+shape = SubResource( 2 )

@@ -1,0 +1,9 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://luv1aawif5ul"]
+
+[ext_resource type="FontFile" uid="uid://bd6bxa8nwl8gm" path="res://ui/resources/fonts/ocr_a_extended_regular.TTF" id="1_mbcwe"]
+
+[resource]
+line_spacing = 2.08165e-12
+font = ExtResource("1_mbcwe")
+font_size = 36
+font_color = Color(0.960784, 0.682353, 0.2, 1)

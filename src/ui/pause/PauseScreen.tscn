@@ -1,0 +1,63 @@
+[gd_scene load_steps=8 format=3 uid="uid://b7728jx4vb2lt"]
+
+[ext_resource type="FontFile" path="res://ui/resources/fonts/ocr_a_extended_regular_56pt.tres" id="1"]
+[ext_resource type="Theme" uid="uid://b7fhmr1awfy2l" path="res://ui/resources/buttons/button_green_dark.tres" id="2"]
+[ext_resource type="Texture2D" uid="uid://bli3ayg6eqeo0" path="res://ui/resources/popup_bg.png" id="3"]
+[ext_resource type="LabelSettings" uid="uid://luv1aawif5ul" path="res://ui/resources/fonts/label_settings_body.tres" id="3_xwvc7"]
+[ext_resource type="Theme" uid="uid://fqejrxe4hj6y" path="res://ui/resources/buttons/button_green_light.tres" id="4"]
+[ext_resource type="Script" path="res://ui/resources/buttons/ReturnToGameButton.gd" id="5"]
+[ext_resource type="Script" path="res://ui/resources/buttons/ExitGameButton.gd" id="6"]
+
+[node name="PauseScreen" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="BG" type="TextureRect" parent="."]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource("3")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Content" type="VBoxContainer" parent="."]
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -204.0
+offset_top = -157.5
+offset_right = 204.0
+offset_bottom = 157.5
+theme_override_constants/separation = 36
+
+[node name="Text" type="Label" parent="Content"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1")
+text = "JOGO PAUSADO"
+label_settings = ExtResource("3_xwvc7")
+horizontal_alignment = 1
+
+[node name="Buttons" type="VBoxContainer" parent="Content"]
+custom_minimum_size = Vector2(320, 0)
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_constants/separation = 24
+
+[node name="Retornar" type="Button" parent="Content/Buttons"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("4")
+text = "RETORNAR"
+script = ExtResource("5")
+
+[node name="SairDoJogo" type="Button" parent="Content/Buttons"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2")
+text = "SAIR DO JOGO"
+script = ExtResource("6")

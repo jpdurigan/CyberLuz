@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://c4vvm1077ek24"]
+
+[ext_resource type="Theme" uid="uid://cnerh81w7o6it" path="res://ui/resources/buttons/button_default.tres" id="1"]
+[ext_resource type="Script" path="res://ui/resources/buttons/ChangeSceneButton.gd" id="2"]
+
+[node name="ChangeSceneButton" type="Button"]
+custom_minimum_size = Vector2(250, 100)
+offset_right = 202.0
+offset_bottom = 98.0
+theme = ExtResource("1")
+text = "INICIAR"
+script = ExtResource("2")
+_scene_path = ""
