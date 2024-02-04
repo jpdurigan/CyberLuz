@@ -1,13 +1,13 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://world/assets/cacto_01/cacto_01.png" type="Texture" id=1]
+[ext_resource path="res://world/assets/cacto_01/cacto_01.png" type="Texture2D" id=1]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 45.6508
 
 [node name="Cacto01" type="StaticBody2D"]
 
-[node name="Cacto01" type="Sprite" parent="."]
+[node name="Cacto01" type="Sprite2D" parent="."]
 position = Vector2( 0, -71 )
 texture = ExtResource( 1 )
 

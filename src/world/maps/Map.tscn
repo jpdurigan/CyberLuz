@@ -1,96 +1,95 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=14 format=3 uid="uid://clb4fxhmcvlhd"]
 
-[ext_resource path="res://world/maps/Map.gd" type="Script" id=1]
-[ext_resource path="res://player/Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://civilians/civil1/Civil1.tscn" type="PackedScene" id=3]
-[ext_resource path="res://enemies/alien/Alien.tscn" type="PackedScene" id=4]
-[ext_resource path="res://world/assets/cacto_01/Cacto01.tscn" type="PackedScene" id=5]
-[ext_resource path="res://world/assets/pedra_01/Pedra01.tscn" type="PackedScene" id=6]
-[ext_resource path="res://world/assets/cacto_03/Cacto03.tscn" type="PackedScene" id=7]
-[ext_resource path="res://world/assets/arvore_seca/ArvoreSeca.tscn" type="PackedScene" id=8]
-[ext_resource path="res://world/assets/cacto_02/Cacto02.tscn" type="PackedScene" id=9]
-[ext_resource path="res://components/camera/GameCamera.gd" type="Script" id=10]
-[ext_resource path="res://ui/start/images/BG.png" type="Texture" id=11]
-[ext_resource path="res://items/tapioca/Tapioca.tscn" type="PackedScene" id=12]
-[ext_resource path="res://world/maps/ItemSpawner.gd" type="Script" id=13]
+[ext_resource type="Script" path="res://world/maps/Map.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://c10ul1m7yn577" path="res://player/Player.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://bo707bwyarg5e" path="res://civilians/civil1/Civil1.tscn" id="3"]
+[ext_resource type="PackedScene" uid="uid://be5osluu1wfc" path="res://enemies/alien/Alien.tscn" id="4"]
+[ext_resource type="PackedScene" path="res://world/assets/cacto_01/Cacto01.tscn" id="5"]
+[ext_resource type="PackedScene" uid="uid://c255r610lc28i" path="res://world/assets/pedra_01/Pedra01.tscn" id="6"]
+[ext_resource type="PackedScene" path="res://world/assets/cacto_03/Cacto03.tscn" id="7"]
+[ext_resource type="PackedScene" path="res://world/assets/arvore_seca/ArvoreSeca.tscn" id="8"]
+[ext_resource type="PackedScene" uid="uid://bn3k0d3yjywxp" path="res://world/assets/cacto_02/Cacto02.tscn" id="9"]
+[ext_resource type="Script" path="res://components/camera/GameCamera.gd" id="10"]
+[ext_resource type="Texture2D" uid="uid://r3phufe5ipo" path="res://ui/start/images/BG.png" id="11"]
+[ext_resource type="PackedScene" path="res://items/tapioca/Tapioca.tscn" id="12"]
+[ext_resource type="Script" path="res://world/maps/ItemSpawner.gd" id="13"]
 
 [node name="Map" type="Node2D"]
-script = ExtResource( 1 )
+script = ExtResource("1")
 
 [node name="InfiniteBg" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="InfiniteBg"]
-motion_mirroring = Vector2( 1920, 1080 )
+motion_mirroring = Vector2(1920, 1080)
 
-[node name="Bg" type="Sprite" parent="InfiniteBg/ParallaxLayer"]
-texture = ExtResource( 11 )
+[node name="Bg" type="Sprite2D" parent="InfiniteBg/ParallaxLayer"]
+texture = ExtResource("11")
 centered = false
 
 [node name="GameCamera" type="Camera2D" parent="."]
-position = Vector2( 518, 306 )
-current = true
-zoom = Vector2( 2, 2 )
-script = ExtResource( 10 )
+position = Vector2(518, 306)
+zoom = Vector2(0.5, 0.5)
+script = ExtResource("10")
 target_path = NodePath("../Entities/Player")
 
-[node name="Entities" type="YSort" parent="."]
+[node name="Entities" type="Node2D" parent="."]
 
-[node name="Player" parent="Entities" instance=ExtResource( 2 )]
-position = Vector2( 164, 452 )
+[node name="Player" parent="Entities" instance=ExtResource("2")]
+position = Vector2(164, 452)
 
-[node name="Civil" parent="Entities" instance=ExtResource( 3 )]
-position = Vector2( 504, 293 )
+[node name="Civil" parent="Entities" instance=ExtResource("3")]
+position = Vector2(504, 293)
 accerelation = 300.0
-target = Vector2( 504, 293 )
+target = Vector2(504, 293)
 
-[node name="Civil2" parent="Entities" instance=ExtResource( 3 )]
-position = Vector2( 624, 442 )
+[node name="Civil2" parent="Entities" instance=ExtResource("3")]
+position = Vector2(624, 442)
 accerelation = 300.0
-target = Vector2( 624, 442 )
+target = Vector2(624, 442)
 
-[node name="Civil3" parent="Entities" instance=ExtResource( 3 )]
-position = Vector2( 741, 258 )
+[node name="Civil3" parent="Entities" instance=ExtResource("3")]
+position = Vector2(741, 258)
 accerelation = 300.0
-target = Vector2( 741, 258 )
+target = Vector2(741, 258)
 initial_direction = -1.0
 
-[node name="Civil4" parent="Entities" instance=ExtResource( 3 )]
-position = Vector2( 846, 409 )
+[node name="Civil4" parent="Entities" instance=ExtResource("3")]
+position = Vector2(846, 409)
 accerelation = 300.0
-target = Vector2( 846, 409 )
+target = Vector2(846, 409)
 initial_direction = -1.0
 
-[node name="World" type="YSort" parent="Entities"]
+[node name="World" type="Node2D" parent="Entities"]
 
-[node name="Cacto02" parent="Entities/World" instance=ExtResource( 9 )]
-position = Vector2( 56, 793 )
+[node name="Cacto02" parent="Entities/World" instance=ExtResource("9")]
+position = Vector2(56, 793)
 
-[node name="Cacto03" parent="Entities/World" instance=ExtResource( 9 )]
-position = Vector2( -117, 454 )
+[node name="Cacto03" parent="Entities/World" instance=ExtResource("9")]
+position = Vector2(-117, 454)
 
-[node name="Cacto04" parent="Entities/World" instance=ExtResource( 7 )]
-position = Vector2( 450, 681 )
+[node name="Cacto04" parent="Entities/World" instance=ExtResource("7")]
+position = Vector2(450, 681)
 
-[node name="Pedra01" parent="Entities/World" instance=ExtResource( 6 )]
-position = Vector2( 78, 611 )
+[node name="Pedra01" parent="Entities/World" instance=ExtResource("6")]
+position = Vector2(78, 611)
 
-[node name="ArvoreSeca" parent="Entities/World" instance=ExtResource( 8 )]
-position = Vector2( -212, 589 )
+[node name="ArvoreSeca" parent="Entities/World" instance=ExtResource("8")]
+position = Vector2(-212, 589)
 
-[node name="Cacto01" parent="Entities/World" instance=ExtResource( 5 )]
-position = Vector2( -171, 668 )
+[node name="Cacto01" parent="Entities/World" instance=ExtResource("5")]
+position = Vector2(-171, 668)
 
-[node name="Tapioca" parent="Entities" instance=ExtResource( 12 )]
-position = Vector2( -127, 876 )
+[node name="Tapioca" parent="Entities" instance=ExtResource("12")]
+position = Vector2(-127, 876)
 
-[node name="Tapioca2" parent="Entities" instance=ExtResource( 12 )]
-position = Vector2( -326, 793 )
+[node name="Tapioca2" parent="Entities" instance=ExtResource("12")]
+position = Vector2(-326, 793)
 
-[node name="Tapioca3" parent="Entities" instance=ExtResource( 12 )]
-position = Vector2( -518, 914 )
+[node name="Tapioca3" parent="Entities" instance=ExtResource("12")]
+position = Vector2(-518, 914)
 
-[node name="Alien" parent="Entities" instance=ExtResource( 4 )]
-position = Vector2( 1127, 682 )
+[node name="Alien" parent="Entities" instance=ExtResource("4")]
+position = Vector2(1127, 682)
 
-[node name="ItemSpawner" type="YSort" parent="Entities"]
-script = ExtResource( 13 )
+[node name="ItemSpawner" type="Node2D" parent="Entities"]
+script = ExtResource("13")

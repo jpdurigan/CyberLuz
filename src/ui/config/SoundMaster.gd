@@ -1,12 +1,13 @@
 extends HBoxContainer
 
-onready var _button: TextureButton = $Button
-onready var _slider: HSlider = $Slider
+@onready var _button: TextureButton = $Button
+@onready var _slider: HSlider = $Slider
+
 
 func _ready():
-	connect("visibility_changed", self, "_on_visibility_changed")
-	_button.connect("toggled", self, "_on_button_toggled")
-	_slider.connect("value_changed", self, "_on_slider_changed")
+	visibility_changed.connect(_on_visibility_changed)
+	_button.toggled.connect(_on_button_toggled)
+	_slider.value_changed.connect(_on_slider_changed)
 
 
 func _on_visibility_changed():

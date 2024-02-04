@@ -14,11 +14,12 @@ var player: Player = null
 var enemy: Enemy = null
 var civil: Civil = null
 
+
 func _ready():
-	connect("area_entered", self, "_on_area_entered")
-	connect("area_exited", self, "_on_area_exited")
-	connect("body_entered", self, "_on_body_entered")
-	connect("body_exited", self, "_on_body_exited")
+	area_entered.connect(_on_area_entered)
+	area_exited.connect(_on_area_exited)
+	body_entered.connect(_on_body_entered)
+	body_exited.connect(_on_body_exited)
 
 
 func has_overlapping_player() -> bool:
@@ -43,59 +44,59 @@ func get_overlapping_civil() -> Civil:
 func _on_area_entered(area: Area2D) -> void:
 	player = area.owner as Player
 	if player:
-		emit_signal("player_entered")
+		player_entered.emit()
 	
 	enemy = area.owner as Enemy
 	if enemy:
-		emit_signal("enemy_entered")
+		enemy_entered.emit()
 	
 	civil = area.owner as Civil
 	if civil:
-		emit_signal("civil_entered")
+		civil_entered.emit()
 	
-	emit_signal("entered")
+	entered.emit()
 
 func _on_area_exited(area: Area2D) -> void:
 	if area.owner == player:
 		player = null
-		emit_signal("player_exited")
+		player_exited.emit()
 	
 	if area.owner == enemy:
 		enemy = null
-		emit_signal("enemy_exited")
+		enemy_exited.emit()
 	
 	if area.owner == civil:
 		civil = null
-		emit_signal("civil_exited")
+		civil_exited.emit()
 	
-	emit_signal("exited")
+	exited.emit()
 
 func _on_body_entered(body: Node) -> void:
 	player = body as Player
 	if player:
-		emit_signal("player_entered")
+		player_entered.emit()
 	
 	enemy = body as Enemy
 	if enemy:
-		emit_signal("enemy_entered")
+		enemy_entered.emit()
 	
 	civil = body as Civil
 	if civil:
-		emit_signal("civil_entered")
+		civil_entered.emit()
 	
-	emit_signal("entered")
+	entered.emit()
 
 func _on_body_exited(body: Node) -> void:
 	if body == player:
 		player = null
-		emit_signal("player_exited")
+		player_exited.emit()
 	
 	if body == enemy:
 		enemy = null
-		emit_signal("enemy_exited")
+		enemy_exited.emit()
 	
 	if body == civil:
 		civil = null
-		emit_signal("civil_exited")
+		civil_exited.emit()
 	
-	emit_signal("exited")
+	exited.emit()

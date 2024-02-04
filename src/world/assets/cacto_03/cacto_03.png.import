@@ -1,8 +1,9 @@
 [remap]
 
 importer="texture"
-type="StreamTexture"
-path="res://.import/cacto_03.png-00f2b19db890e6fe28d738e8abd381ed.stex"
+type="CompressedTexture2D"
+uid="uid://cq6nquuf78bv0"
+path="res://.godot/imported/cacto_03.png-00f2b19db890e6fe28d738e8abd381ed.ctex"
 metadata={
 "vram_texture": false
 }
@@ -10,26 +11,24 @@ metadata={
 [deps]
 
 source_file="res://world/assets/cacto_03/cacto_03.png"
-dest_files=[ "res://.import/cacto_03.png-00f2b19db890e6fe28d738e8abd381ed.stex" ]
+dest_files=["res://.godot/imported/cacto_03.png-00f2b19db890e6fe28d738e8abd381ed.ctex"]
 
 [params]
 
 compress/mode=0
+compress/high_quality=false
 compress/lossy_quality=0.7
-compress/hdr_mode=0
-compress/bptc_ldr=0
+compress/hdr_compression=1
 compress/normal_map=0
-flags/repeat=0
-flags/filter=false
-flags/mipmaps=false
-flags/anisotropic=false
-flags/srgb=2
+compress/channel_pack=0
+mipmaps/generate=false
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
 process/fix_alpha_border=true
 process/premult_alpha=false
-process/HDR_as_SRGB=false
-process/invert_color=false
 process/normal_map_invert_y=false
-stream=false
-size_limit=0
-detect_3d=false
-svg/scale=1.0
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=1

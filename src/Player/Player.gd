@@ -1,24 +1,24 @@
 class_name Player
-extends KinematicBody2D
+extends CharacterBody2D
 
 const ANIM_WALK_BLEND_POSITION = "parameters/state_machine/walk/blend_position"
 const ANIM_IDLE_BLEND_POSITION = "parameters/state_machine/idle/blend_position"
 const ANIM_DAMAGE_BLEND_POSITION = "parameters/state_machine/damage/blend_position"
 const ANIM_STATE_MACHINE_PLAYBACK = "parameters/state_machine/playback"
 
-export(float, 0.0, 500.0, 10.0) var speed_max: float = 150.0
-export(float, 0.0, 500.0, 10.0) var speed_min: float = 30.0
-export(float, 0.0, 500.0, 10.0) var accerelation: float = 100.0
-export(float, 0.0, 250.0, 10.0) var life_max: float = 100.0
+@export var speed_max: float = 150.0 # (float, 0.0, 500.0, 10.0)
+@export var speed_min: float = 30.0 # (float, 0.0, 500.0, 10.0)
+@export var accerelation: float = 100.0 # (float, 0.0, 500.0, 10.0)
+@export var life_max: float = 100.0 # (float, 0.0, 250.0, 10.0)
 
 var _speed_current: float
 var _life_current: float
 
-onready var _animation_tree: AnimationTree = $AnimationTree
-onready var _animation_state_machine: AnimationNodeStateMachinePlayback = _animation_tree.get(ANIM_STATE_MACHINE_PLAYBACK)
+@onready var _animation_tree: AnimationTree = $AnimationTree
+@onready var _animation_state_machine: AnimationNodeStateMachinePlayback = _animation_tree.get(ANIM_STATE_MACHINE_PLAYBACK)
 
-onready var _shooter: Shooter = $AnimatedSprite/Arm/Shooter
-onready var _untie_area: Area2D = $AnimatedSprite/UntieArea
+@onready var _shooter: Shooter = $AnimatedSprite2D/Arm/Shooter
+@onready var _untie_area: Area2D = $AnimatedSprite2D/UntieArea
 
 func _ready():
 	_speed_current = speed_min
@@ -55,8 +55,8 @@ func is_dead() -> bool:
 
 func _move():
 	var input_direction = Vector2(
-		Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left"),
-		Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
+		Input.get_action_strength("move_right") - Input.get_action_strength("move_left"),
+		Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
 	)
 	
 	_animation_tree.set(ANIM_WALK_BLEND_POSITION, input_direction.x)
@@ -72,7 +72,8 @@ func _move():
 			_animation_state_machine.travel("idle")
 		_speed_current = speed_min
 	
-	move_and_slide(input_direction * _speed_current)
+	set_velocity(input_direction * _speed_current)
+	move_and_slide()
 
 
 func _set_idle_blend_position() -> void:

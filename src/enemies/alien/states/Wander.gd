@@ -1,27 +1,27 @@
 extends AutoForwardState
 
-export var wander_radius: float = 640.0
-export var wait_time: float = 3.0
-export(float, 0.0, 1.0, 0.1) var wait_randomness: float = 0.2
+@export var wander_radius: float = 640.0
+@export var wait_time: float = 3.0
+@export var wait_randomness: float = 0.2 # (float, 0.0, 1.0, 0.1)
 
-export var player_area_path: NodePath
-onready var _player_area: DetectionArea = get_node(player_area_path)
+@export var player_area_path: NodePath
+@onready var _player_area: DetectionArea = get_node(player_area_path)
 
 var _target: Vector2
 
-onready var _timer : Timer = $Timer
-onready var _alien : Enemy = owner as KinematicBody2D
-onready var _initial_position : Vector2 = _alien.global_position
+@onready var _timer : Timer = $Timer
+@onready var _alien : Enemy = owner as Enemy
+@onready var _initial_position : Vector2 = _alien.global_position
 
 
 func enter(_msg: Dictionary) -> void:
-	_timer.connect("timeout", self, "_on_timer_timeout")
-	_player_area.connect("player_entered", self, "_on_player_area_player_entered")
+	_timer.timeout.connect(_on_timer_timeout)
+	_player_area.player_entered.connect(_on_player_area_player_entered)
 	_pick_new_target()
 
 func exit() -> Dictionary:
-	_timer.disconnect("timeout", self, "_on_timer_timeout")
-	_player_area.disconnect("player_entered", self, "_on_player_area_player_entered")
+	_timer.timeout.disconnect(_on_timer_timeout)
+	_player_area.player_entered.disconnect(_on_player_area_player_entered)
 	return {}
 
 
@@ -44,7 +44,7 @@ func _is_waiting() -> bool:
 	return _timer.time_left > 0
 
 func _get_wait_time() -> float:
-	return wait_time * rand_range(1.0 - wait_randomness, 1.0 + wait_randomness)
+	return wait_time * randf_range(1.0 - wait_randomness, 1.0 + wait_randomness)
 
 
 func _on_timer_timeout() -> void:

@@ -1,18 +1,18 @@
 class_name Shooter
 extends Node2D
 
-export var bullet_scene: PackedScene
-export var rate: float = 2
+@export var bullet_scene: PackedScene
+@export var rate: float = 2
 
 var target: Vector2
 
-export var pivot_node_path := NodePath(".")
-onready var _pivot_node: Node2D = get_node(pivot_node_path) as Node2D
-onready var _timer: Timer = $Timer
+@export var pivot_node_path := NodePath(".")
+@onready var _pivot_node: Node2D = get_node(pivot_node_path) as Node2D
+@onready var _timer: Timer = $Timer
 
 
 func _ready():
-	_timer.connect("timeout", self, "_on_timer_timeout")
+	_timer.timeout.connect(_on_timer_timeout)
 
 func _physics_process(_delta):
 	_aim()
@@ -34,7 +34,7 @@ func _aim():
 	_pivot_node.look_at(target)
 
 func _shoot():
-	var bullet: Node2D = bullet_scene.instance()
+	var bullet: Node2D = bullet_scene.instantiate()
 	bullet.global_position = global_position
 	bullet.global_rotation = global_rotation
 	add_child(bullet)

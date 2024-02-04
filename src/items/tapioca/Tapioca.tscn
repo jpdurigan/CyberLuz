@@ -1,19 +1,19 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=5 format=3 uid="uid://bgovgpraae7ea"]
 
-[ext_resource path="res://items/Item.tscn" type="PackedScene" id=1]
-[ext_resource path="res://items/tapioca/item_tapioca.png" type="Texture" id=2]
-[ext_resource path="res://items/tapioca/Tapioca.gd" type="Script" id=3]
+[ext_resource type="PackedScene" uid="uid://cyk85j1mtphdj" path="res://items/Item.tscn" id="1"]
+[ext_resource type="Texture2D" uid="uid://dsxf4xext066c" path="res://items/tapioca/item_tapioca.png" id="2"]
+[ext_resource type="Script" path="res://items/tapioca/Tapioca.gd" id="3"]
 
-[sub_resource type="CircleShape2D" id=1]
+[sub_resource type="CircleShape2D" id="1"]
 radius = 57.8705
 
-[node name="Tapioca" instance=ExtResource( 1 )]
-script = ExtResource( 3 )
+[node name="Tapioca" instance=ExtResource("1")]
+script = ExtResource("3")
 health = 30.0
 
-[node name="Sprite" parent="." index="0"]
-scale = Vector2( 0.3, 0.3 )
-texture = ExtResource( 2 )
+[node name="Sprite2D" parent="." index="0"]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea" index="0"]
-shape = SubResource( 1 )
+shape = SubResource("1")

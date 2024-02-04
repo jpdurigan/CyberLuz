@@ -1,33 +1,31 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=3 uid="uid://dqsmcmla8ixh1"]
 
-[ext_resource path="res://components/state_machine/StateMachine.gd" type="Script" id=1]
-[ext_resource path="res://components/state_machine/State.gd" type="Script" id=2]
-[ext_resource path="res://autoloads/global/Global.gd" type="Script" id=3]
-[ext_resource path="res://autoloads/global/states/Paused.gd" type="Script" id=4]
-[ext_resource path="res://autoloads/global/states/Game.gd" type="Script" id=5]
-[ext_resource path="res://autoloads/global/states/Config.gd" type="Script" id=6]
-[ext_resource path="res://music/west2.mp3" type="AudioStream" id=7]
+[ext_resource type="Script" path="res://components/state_machine/StateMachine.gd" id="1"]
+[ext_resource type="Script" path="res://components/state_machine/State.gd" id="2"]
+[ext_resource type="Script" path="res://autoloads/global/Global.gd" id="3"]
+[ext_resource type="Script" path="res://autoloads/global/states/Paused.gd" id="4"]
+[ext_resource type="Script" path="res://autoloads/global/states/Game.gd" id="5"]
+[ext_resource type="Script" path="res://autoloads/global/states/Config.gd" id="6"]
 
 [node name="Global" type="Node"]
-pause_mode = 2
-script = ExtResource( 3 )
+process_mode = 3
+script = ExtResource("3")
 
 [node name="StateMachine" type="Node" parent="."]
-script = ExtResource( 1 )
+script = ExtResource("1")
 start_node_path = NodePath("Menu")
 
 [node name="Menu" type="Node" parent="StateMachine"]
-script = ExtResource( 2 )
+script = ExtResource("2")
 
 [node name="Game" type="Node" parent="StateMachine"]
-script = ExtResource( 5 )
-game_bgm = ExtResource( 7 )
+script = ExtResource("5")
 
 [node name="Paused" type="Node" parent="StateMachine/Game"]
-script = ExtResource( 4 )
+script = ExtResource("4")
 
 [node name="Config" type="Node" parent="StateMachine/Game"]
-script = ExtResource( 6 )
+script = ExtResource("6")
 
 [node name="BGM" type="AudioStreamPlayer" parent="."]
-bus = "Music"
+bus = &"Music"

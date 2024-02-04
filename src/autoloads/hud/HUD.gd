@@ -1,8 +1,8 @@
 extends CanvasLayer
 
-onready var _game: Control = $Game
-onready var _pause: Control = $PauseScreen
-onready var _config: Control = $ConfigScreen
+@onready var _game: Control = $Game
+@onready var _pause: Control = $PauseScreen
+@onready var _config: Control = $ConfigScreen
 
 
 func _enter_tree():

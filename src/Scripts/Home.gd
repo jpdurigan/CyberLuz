@@ -3,7 +3,7 @@ extends Control
 
 
 func _on_ButtonCredits_button_down():
-	get_tree().change_scene_to(load("res://Scenes/Credits.tscn"))
+	get_tree().change_scene_to_packed(load("res://Scenes/Credits.tscn"))
 	pass # Replace with function body.
 
 
