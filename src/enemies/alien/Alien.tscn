@@ -690,7 +690,7 @@ transitions = ["idle", "walk", SubResource("19"), "walk", "idle", SubResource("2
 graph_offset = Vector2(98.305, 16)
 
 [sub_resource type="AnimationNodeBlendTree" id="25"]
-graph_offset = Vector2(-380.979, 30.3512)
+graph_offset = Vector2(-180.422, 0)
 nodes/state_machine/node = SubResource("24")
 nodes/state_machine/position = Vector2(-40, 110)
 node_connections = [&"output", 0, &"state_machine"]
@@ -726,9 +726,11 @@ libraries = {
 }
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_yruub")
+}
 tree_root = SubResource("25")
 anim_player = NodePath("../AnimationPlayer")
-active = true
 parameters/state_machine/damage/blend_position = 0.225653
 parameters/state_machine/idle/blend_position = -9.93069e-06
 parameters/state_machine/walk/blend_position = -0.75772
