@@ -1,10 +1,51 @@
-[gd_scene load_steps=5 format=3 uid="uid://dupkxgpndtlis"]
+[gd_scene load_steps=11 format=3 uid="uid://dupkxgpndtlis"]
 
-[ext_resource type="Texture2D" uid="uid://r3phufe5ipo" path="res://ui/start/images/BG.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://cqyxaawy2obdf" path="res://ui/start/images/fundo_jogo.png" id="1_mbw08"]
+[ext_resource type="Texture2D" uid="uid://c707b0bw6nthx" path="res://ui/start/images/fundo_nome_jogo.png" id="2_rh1rl"]
 [ext_resource type="PackedScene" uid="uid://c4vvm1077ek24" path="res://ui/resources/buttons/ChangeSceneButton.tscn" id="3"]
+[ext_resource type="Texture2D" uid="uid://u4pxhgehsgci" path="res://ui/start/images/nome_jogo.png" id="3_7c0eu"]
 [ext_resource type="Texture2D" uid="uid://3gag6r4ovmd7" path="res://ui/start/images/cyberluz_logo.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://cim35en8paj2n" path="res://ui/start/images/player_capa.png" id="4_bat8b"]
 
 [sub_resource type="CanvasItemMaterial" id="1"]
+
+[sub_resource type="Animation" id="Animation_sdlhc"]
+resource_name = "player_inicio"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BG/Player:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.610254, 0.610254), Vector2(0.62, 0.62), Vector2(0.610254, 0.610254)]
+}
+
+[sub_resource type="Animation" id="Animation_5e4d3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BG/Player:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.610254, 0.610254)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yu3ue"]
+_data = {
+"RESET": SubResource("Animation_5e4d3"),
+"player_inicio": SubResource("Animation_sdlhc")
+}
 
 [node name="StartScreen" type="Control"]
 layout_mode = 3
@@ -22,9 +63,41 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1")
+texture = ExtResource("1_mbw08")
 expand_mode = 1
 stretch_mode = 6
+
+[node name="Faixa logo" type="TextureRect" parent="BG"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.011
+offset_left = -8.0
+offset_top = 120.0
+offset_right = 759.0
+offset_bottom = 119.872
+scale = Vector2(0.607661, 0.607661)
+texture = ExtResource("2_rh1rl")
+metadata/_edit_group_ = true
+
+[node name="LogoOf" type="TextureRect" parent="BG"]
+layout_mode = 0
+offset_left = 264.0
+offset_top = 264.0
+offset_right = 1612.0
+offset_bottom = 388.0
+scale = Vector2(0.623674, 0.623674)
+texture = ExtResource("3_7c0eu")
+
+[node name="Player" type="TextureRect" parent="BG"]
+layout_mode = 0
+offset_left = -88.0
+offset_top = -416.0
+offset_right = 1832.0
+offset_bottom = 664.0
+scale = Vector2(0.610254, 0.610254)
+pivot_offset = Vector2(235.967, 1061.85)
+texture = ExtResource("4_bat8b")
 
 [node name="Margins" type="MarginContainer" parent="."]
 layout_mode = 0
@@ -34,11 +107,13 @@ theme_override_constants/margin_left = 72
 theme_override_constants/margin_right = 72
 
 [node name="Content" type="VBoxContainer" parent="Margins"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 6
 
 [node name="Logo" type="TextureRect" parent="Margins/Content"]
+visible = false
 custom_minimum_size = Vector2(0, 200)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -59,3 +134,9 @@ _scene_path = "res://world/maps/Map.tscn"
 layout_mode = 2
 text = "CRÉDITOS"
 _scene_path = "res://ui/credits/Credits.tscn"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_yu3ue")
+}
+autoplay = "player_inicio"

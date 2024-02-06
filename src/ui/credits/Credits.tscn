@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://b4ohrnhaq1aq6"]
+[gd_scene load_steps=5 format=3 uid="uid://b4ohrnhaq1aq6"]
 
 [ext_resource type="PackedScene" uid="uid://c4vvm1077ek24" path="res://ui/resources/buttons/ChangeSceneButton.tscn" id="1"]
-[ext_resource type="Texture2D" uid="uid://r3phufe5ipo" path="res://ui/start/images/BG.png" id="1_qpcw8"]
+[ext_resource type="Texture2D" uid="uid://3yhlmy4y5aab" path="res://ui/credits/images/fundo_creditos.png" id="1_54fu2"]
+[ext_resource type="Texture2D" uid="uid://3d1xf5ec4wsq" path="res://ui/credits/images/logo_igda.png" id="2_088n6"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_xoai7"]
 
@@ -10,6 +11,8 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="BG" type="TextureRect" parent="."]
 material = SubResource("CanvasItemMaterial_xoai7")
@@ -19,15 +22,34 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_qpcw8")
+texture = ExtResource("1_54fu2")
 expand_mode = 1
 stretch_mode = 6
 
+[node name="TextureRect" type="TextureRect" parent="BG"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 860.0
+offset_top = 488.0
+offset_right = 14.0
+offset_bottom = -33.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.734352, 0.734352)
+texture = ExtResource("2_088n6")
+
 [node name="Voltar" parent="." instance=ExtResource("1")]
 layout_mode = 0
-offset_left = 747.0
-offset_top = 28.0
-offset_right = 997.0
-offset_bottom = 128.0
+offset_left = 58.0
+offset_top = 501.0
+offset_right = 308.0
+offset_bottom = 601.0
 text = "VOLTAR"
 _scene_path = "res://ui/start/StartScreen.tscn"
+
+[node name="TextEdit" type="TextEdit" parent="."]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
