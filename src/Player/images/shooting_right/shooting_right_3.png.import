@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://coi5ibpncrwvy"
-path="res://.godot/imported/shooting_right_3.png-3c5d821995b0ce99edf0765fbca43ba6.ctex"
+path="res://.godot/imported/shooting_right_3.png-7ed3dd988afa03ad8344b694244d827f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/images/shooting_right/shooting_right_3.png"
-dest_files=["res://.godot/imported/shooting_right_3.png-3c5d821995b0ce99edf0765fbca43ba6.ctex"]
+source_file="res://player/images/shooting_right/shooting_right_3.png"
+dest_files=["res://.godot/imported/shooting_right_3.png-7ed3dd988afa03ad8344b694244d827f.ctex"]
 
 [params]
 

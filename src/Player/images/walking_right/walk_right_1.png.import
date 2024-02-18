@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b71fywvhfqhl7"
-path="res://.godot/imported/walk_right_1.png-54f3fe0184bc04d7a09bb1dba77b3d80.ctex"
+path="res://.godot/imported/walk_right_1.png-28f600ea998fe56f309c43a1c769661f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/images/walking_right/walk_right_1.png"
-dest_files=["res://.godot/imported/walk_right_1.png-54f3fe0184bc04d7a09bb1dba77b3d80.ctex"]
+source_file="res://player/images/walking_right/walk_right_1.png"
+dest_files=["res://.godot/imported/walk_right_1.png-28f600ea998fe56f309c43a1c769661f.ctex"]
 
 [params]
 

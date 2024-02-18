@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dxkbi8e821wyt"
-path="res://.godot/imported/PlayerEnfeites.png-62e74b2b2710d3bc719b23e01464b96e.ctex"
+path="res://.godot/imported/PlayerEnfeites.png-08ec12c27dbe4b7c64aa252867ced2e2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/images/HealthBar/PlayerEnfeites.png"
-dest_files=["res://.godot/imported/PlayerEnfeites.png-62e74b2b2710d3bc719b23e01464b96e.ctex"]
+source_file="res://player/images/HealthBar/PlayerEnfeites.png"
+dest_files=["res://.godot/imported/PlayerEnfeites.png-08ec12c27dbe4b7c64aa252867ced2e2.ctex"]
 
 [params]
 

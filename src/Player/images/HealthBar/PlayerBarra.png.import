@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dbls0ahbtaboo"
-path="res://.godot/imported/PlayerBarra.png-c9426ee98bc509d2a60f9c4e79b0906d.ctex"
+path="res://.godot/imported/PlayerBarra.png-7e23ed77396cfe3c79d73b5b41c63a53.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/images/HealthBar/PlayerBarra.png"
-dest_files=["res://.godot/imported/PlayerBarra.png-c9426ee98bc509d2a60f9c4e79b0906d.ctex"]
+source_file="res://player/images/HealthBar/PlayerBarra.png"
+dest_files=["res://.godot/imported/PlayerBarra.png-7e23ed77396cfe3c79d73b5b41c63a53.ctex"]
 
 [params]
 
