@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1nuci5ic06wn"
-path="res://.godot/imported/walking_front_3.png-ce2c1d71b46253413b7df063c2f23b12.ctex"
+uid="uid://cim35en8paj2n"
+path="res://.godot/imported/player_capa.png-2b90014e1678a2f637d5c63a6d1543d5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/images/walking_front/walking_front_3.png"
-dest_files=["res://.godot/imported/walking_front_3.png-ce2c1d71b46253413b7df063c2f23b12.ctex"]
+source_file="res://ui/start/images/player_capa.png"
+dest_files=["res://.godot/imported/player_capa.png-2b90014e1678a2f637d5c63a6d1543d5.ctex"]
 
 [params]
 

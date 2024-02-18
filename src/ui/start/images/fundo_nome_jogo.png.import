@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1nuci5ic06wn"
-path="res://.godot/imported/walking_front_3.png-ce2c1d71b46253413b7df063c2f23b12.ctex"
+uid="uid://c707b0bw6nthx"
+path="res://.godot/imported/fundo_nome_jogo.png-2c0d1cdf7fd06aec68edb96ceef56945.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/images/walking_front/walking_front_3.png"
-dest_files=["res://.godot/imported/walking_front_3.png-ce2c1d71b46253413b7df063c2f23b12.ctex"]
+source_file="res://ui/start/images/fundo_nome_jogo.png"
+dest_files=["res://.godot/imported/fundo_nome_jogo.png-2c0d1cdf7fd06aec68edb96ceef56945.ctex"]
 
 [params]
 
