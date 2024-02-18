@@ -1,19 +1,19 @@
 [gd_scene load_steps=45 format=3 uid="uid://c10ul1m7yn577"]
 
-[ext_resource type="Texture2D" uid="uid://b71fywvhfqhl7" path="res://player/images/walking_right/walk_right_1.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://b71fywvhfqhl7" path="res://player/images_archive/walking_right/walk_right_1.png" id="1"]
 [ext_resource type="Script" path="res://player/Player.gd" id="2"]
-[ext_resource type="Texture2D" uid="uid://r42b47j4l70l" path="res://player/images/walking_right/walk_right_3.png" id="3"]
-[ext_resource type="Texture2D" uid="uid://dkphlyapaawfj" path="res://player/images/walking_right/walk_right_2.png" id="4"]
-[ext_resource type="Texture2D" uid="uid://bbwwf286wdbc2" path="res://player/images/walking_right/walk_right_4.png" id="5"]
-[ext_resource type="Texture2D" uid="uid://0w28oym6pile" path="res://player/images/idle_right/idle_2.png" id="6"]
-[ext_resource type="Texture2D" uid="uid://4bbeismbyfbt" path="res://player/images/idle_right/idle_1.png" id="7"]
-[ext_resource type="Texture2D" uid="uid://cwkdspncbdb22" path="res://player/images/walking_right/arm.png" id="8"]
-[ext_resource type="Texture2D" uid="uid://dkwaqauo26rai" path="res://player/images/damage/damage_2.png" id="16"]
-[ext_resource type="Texture2D" uid="uid://caim1lb2831q3" path="res://player/images/damage/damage_1.png" id="17"]
+[ext_resource type="Texture2D" uid="uid://r42b47j4l70l" path="res://player/images_archive/walking_right/walk_right_3.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://dkphlyapaawfj" path="res://player/images_archive/walking_right/walk_right_2.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://bbwwf286wdbc2" path="res://player/images_archive/walking_right/walk_right_4.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://0w28oym6pile" path="res://player/images_archive/idle_right/idle_2.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://4bbeismbyfbt" path="res://player/images_archive/idle_right/idle_1.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://cwkdspncbdb22" path="res://player/images_archive/walking_right/arm.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://dkwaqauo26rai" path="res://player/images_archive/damage/damage_2.png" id="16"]
+[ext_resource type="Texture2D" uid="uid://caim1lb2831q3" path="res://player/images_archive/damage/damage_1.png" id="17"]
 [ext_resource type="PackedScene" path="res://components/shooter/Shooter.tscn" id="18"]
 [ext_resource type="Script" path="res://components/shooter/PlayerShooter.gd" id="19"]
 [ext_resource type="Script" path="res://components/DetectionArea.gd" id="20"]
-[ext_resource type="Texture2D" uid="uid://cephgivkmsryq" path="res://player/images/sombra.png" id="21"]
+[ext_resource type="Texture2D" uid="uid://cephgivkmsryq" path="res://player/images_archive/sombra.png" id="21"]
 
 [sub_resource type="SpriteFrames" id="19"]
 animations = [{
@@ -729,9 +729,11 @@ libraries = {
 }
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_g8d2s")
+}
 tree_root = SubResource("40")
 anim_player = NodePath("../AnimationPlayer")
-active = true
 parameters/state_machine/damage/blend_position = -0.000565584
 parameters/state_machine/idle/blend_position = -0.00749999
 parameters/state_machine/walk/blend_position = -0.00962698
