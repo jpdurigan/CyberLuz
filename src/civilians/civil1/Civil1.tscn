@@ -3,11 +3,11 @@
 [ext_resource type="Script" path="res://components/state_machine/StateMachine.gd" id="1"]
 [ext_resource type="Script" path="res://components/state_machine/State.gd" id="2"]
 [ext_resource type="Script" path="res://civilians/civil1/Civil.gd" id="6"]
-[ext_resource type="Texture2D" uid="uid://bmvbaggqq43go" path="res://civilians/civil1/images/release/civil1_release.png" id="7"]
-[ext_resource type="Texture2D" uid="uid://enh0hueoh4ed" path="res://civilians/civil1/images/walk/civil1_walk2.png" id="8"]
-[ext_resource type="Texture2D" uid="uid://62pgmg8lsca7" path="res://civilians/civil1/images/walk/civil1_walk1.png" id="9"]
-[ext_resource type="Texture2D" uid="uid://cmxuf8t61x2w7" path="res://civilians/civil1/images/tied/civil1_tied.png" id="10"]
-[ext_resource type="Texture2D" uid="uid://uuxymcy13hs8" path="res://civilians/civil1/images/walk/civil1_walk3.png" id="11"]
+[ext_resource type="Texture2D" uid="uid://bmvbaggqq43go" path="res://civilians/civil1/images_archive/release/civil1_release.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://enh0hueoh4ed" path="res://civilians/civil1/images_archive/walk/civil1_walk2.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://62pgmg8lsca7" path="res://civilians/civil1/images_archive/walk/civil1_walk1.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://cmxuf8t61x2w7" path="res://civilians/civil1/images_archive/tied/civil1_tied.png" id="10"]
+[ext_resource type="Texture2D" uid="uid://uuxymcy13hs8" path="res://civilians/civil1/images_archive/walk/civil1_walk3.png" id="11"]
 
 [sub_resource type="SpriteFrames" id="31"]
 animations = [{
