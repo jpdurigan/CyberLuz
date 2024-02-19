@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c4qy4hypesxpp"
-path="res://.godot/imported/corpo_fente_3.png-ed7fff12888c6f3424981b56decc47b5.ctex"
+path="res://.godot/imported/corpo_fente_3.png-a035d27e8884d6c7a23b8b984dc123d4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://player/images/walking_frente/corpo/corpo_fente_3.png"
-dest_files=["res://.godot/imported/corpo_fente_3.png-ed7fff12888c6f3424981b56decc47b5.ctex"]
+source_file="res://Player/images/walking_frente/corpo/corpo_fente_3.png"
+dest_files=["res://.godot/imported/corpo_fente_3.png-a035d27e8884d6c7a23b8b984dc123d4.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cephgivkmsryq"
-path="res://.godot/imported/sombra.png-bd0aca8313b3b23e2ee621ef76b43a88.ctex"
+path="res://.godot/imported/sombra.png-8f0e3479934a28d17a771c2a2308c123.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://player/images_archive/sombra.png"
-dest_files=["res://.godot/imported/sombra.png-bd0aca8313b3b23e2ee621ef76b43a88.ctex"]
+source_file="res://Player/images_archive/sombra.png"
+dest_files=["res://.godot/imported/sombra.png-8f0e3479934a28d17a771c2a2308c123.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dcfox4facjgkj"
-path="res://.godot/imported/walking_front_2.png-13df5e60d4928750d55fa6194f2bee52.ctex"
+path="res://.godot/imported/walking_front_2.png-ab8bc2e3ed9997d10390c935af5b9b8c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://player/images_archive/walking_front/walking_front_2.png"
-dest_files=["res://.godot/imported/walking_front_2.png-13df5e60d4928750d55fa6194f2bee52.ctex"]
+source_file="res://Player/images_archive/walking_front/walking_front_2.png"
+dest_files=["res://.godot/imported/walking_front_2.png-ab8bc2e3ed9997d10390c935af5b9b8c.ctex"]
 
 [params]
 

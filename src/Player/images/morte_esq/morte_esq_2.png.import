@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ikugy0hjxg41"
-path="res://.godot/imported/morte_esq_2.png-aa4a098e42757f3ed29b56e739d60a36.ctex"
+path="res://.godot/imported/morte_esq_2.png-360bb0023b83163228e6982af23e4369.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://player/images/morte_esq/morte_esq_2.png"
-dest_files=["res://.godot/imported/morte_esq_2.png-aa4a098e42757f3ed29b56e739d60a36.ctex"]
+source_file="res://Player/images/morte_esq/morte_esq_2.png"
+dest_files=["res://.godot/imported/morte_esq_2.png-360bb0023b83163228e6982af23e4369.ctex"]
 
 [params]
 

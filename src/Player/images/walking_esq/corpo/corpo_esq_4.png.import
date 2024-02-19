@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bys167a805iqa"
-path="res://.godot/imported/corpo_esq_4.png-3c1a9fad56df64359cea765fb19a83a1.ctex"
+path="res://.godot/imported/corpo_esq_4.png-ff39937f45dd0b1cbcf7356bb4f388b0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://player/images/walking_esq/corpo/corpo_esq_4.png"
-dest_files=["res://.godot/imported/corpo_esq_4.png-3c1a9fad56df64359cea765fb19a83a1.ctex"]
+source_file="res://Player/images/walking_esq/corpo/corpo_esq_4.png"
+dest_files=["res://.godot/imported/corpo_esq_4.png-ff39937f45dd0b1cbcf7356bb4f388b0.ctex"]
 
 [params]
 

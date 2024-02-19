@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://diqog0kdpn5fk"
-path="res://.godot/imported/cab_frente_1.png-216c7fd70f53477d613a437a988db9cd.ctex"
+path="res://.godot/imported/cab_frente_1.png-f28ff6d10482a3414ae9538c8d9e3d84.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://player/images/walking_frente/cab_frente/cab_frente_1.png"
-dest_files=["res://.godot/imported/cab_frente_1.png-216c7fd70f53477d613a437a988db9cd.ctex"]
+source_file="res://Player/images/walking_frente/cab_frente/cab_frente_1.png"
+dest_files=["res://.godot/imported/cab_frente_1.png-f28ff6d10482a3414ae9538c8d9e3d84.ctex"]
 
 [params]
 

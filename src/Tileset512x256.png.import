@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bty07b3fpf0eu"
-path="res://.godot/imported/shooting_left_2.png-8081c04bf7e4242fc75bb1ddeae542d4.ctex"
+uid="uid://8w0of5opdtdm"
+path="res://.godot/imported/Tileset512x256.png-39a485df03f1d883bbf150b168f3a146.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/images_archive/shooting_left/shooting_left_2.png"
-dest_files=["res://.godot/imported/shooting_left_2.png-8081c04bf7e4242fc75bb1ddeae542d4.ctex"]
+source_file="res://Tileset512x256.png"
+dest_files=["res://.godot/imported/Tileset512x256.png-39a485df03f1d883bbf150b168f3a146.ctex"]
 
 [params]
 
