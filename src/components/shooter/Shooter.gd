@@ -16,8 +16,6 @@ func _ready():
 
 func _physics_process(_delta):
 	_aim()
-	if _should_shoot():
-		_shoot()
 
 
 func shoot() -> void:

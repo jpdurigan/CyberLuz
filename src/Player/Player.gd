@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 const ANIM_WALK_BLEND_POSITION = "parameters/state_machine/walk/blend_position"
 const ANIM_IDLE_BLEND_POSITION = "parameters/state_machine/idle/blend_position"
-const ANIM_DAMAGE_BLEND_POSITION = "parameters/state_machine/damage/blend_position"
+#const ANIM_DAMAGE_BLEND_POSITION = "parameters/state_machine/damage/blend_position"
 const ANIM_STATE_MACHINE_PLAYBACK = "parameters/state_machine/playback"
 
 @export var speed_max: float = 150.0 # (float, 0.0, 500.0, 10.0)
@@ -17,8 +17,8 @@ var _life_current: float
 @onready var _animation_tree: AnimationTree = $AnimationTree
 @onready var _animation_state_machine: AnimationNodeStateMachinePlayback = _animation_tree.get(ANIM_STATE_MACHINE_PLAYBACK)
 
-@onready var _shooter: Shooter = $AnimatedSprite2D/Arm/Shooter
-@onready var _untie_area: Area2D = $AnimatedSprite2D/UntieArea
+@onready var _shooter: Shooter = $ArmPivot/Shooter
+@onready var _untie_area: Area2D = $UntieArea
 
 func _ready():
 	_speed_current = speed_min
@@ -45,8 +45,8 @@ func take_damage(value: float) -> void:
 	_life_current -= value
 	if is_dead():
 		queue_free()
-	else:
-		_animation_state_machine.travel("damage")
+	#else:
+		#_animation_state_machine.travel("damage")
 	HUD.update_health(_life_current, life_max)
 
 func is_dead() -> bool:
@@ -61,7 +61,7 @@ func _move():
 	
 	_animation_tree.set(ANIM_WALK_BLEND_POSITION, input_direction.x)
 	if input_direction.length_squared() > 0:
-		_animation_tree.set(ANIM_DAMAGE_BLEND_POSITION, input_direction.x)
+		#_animation_tree.set(ANIM_DAMAGE_BLEND_POSITION, input_direction.x)
 		if _animation_state_machine.get_current_node() == "idle":
 			_animation_state_machine.travel("walk")
 		

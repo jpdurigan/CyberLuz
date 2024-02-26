@@ -1,37 +1,21 @@
-[gd_scene load_steps=32 format=3 uid="uid://c10ul1m7yn577"]
+[gd_scene load_steps=25 format=3 uid="uid://c10ul1m7yn577"]
 
 [ext_resource type="Script" path="res://player/Player.gd" id="2"]
-[ext_resource type="SpriteFrames" uid="uid://bhpifn47wrosq" path="res://player/images/spriteframes_player.tres" id="2_h16co"]
 [ext_resource type="SpriteFrames" uid="uid://btum46jgxyryt" path="res://player/resources/spriteframes_body.tres" id="7_bv6r5"]
 [ext_resource type="SpriteFrames" uid="uid://cohdty2fd4ge0" path="res://player/resources/spriteframes_arm.tres" id="8_8oa1r"]
 [ext_resource type="SpriteFrames" uid="uid://66p0aqecp013" path="res://player/resources/spriteframes_head.tres" id="8_hqy4g"]
 [ext_resource type="AnimationLibrary" uid="uid://c1hljqni2et2l" path="res://player/resources/animationlibrary_player.tres" id="9_cswbi"]
-[ext_resource type="PackedScene" path="res://components/shooter/Shooter.tscn" id="18"]
+[ext_resource type="PackedScene" uid="uid://8sdutdl7r7hs" path="res://components/shooter/Shooter.tscn" id="18"]
 [ext_resource type="Script" path="res://components/shooter/PlayerShooter.gd" id="19"]
 [ext_resource type="Script" path="res://components/DetectionArea.gd" id="20"]
 [ext_resource type="Texture2D" uid="uid://cephgivkmsryq" path="res://player/images_archive/sombra.png" id="21"]
 
 [sub_resource type="CapsuleShape2D" id="14"]
-radius = 30.0
-height = 112.0
+radius = 120.0
+height = 800.0
 
 [sub_resource type="RectangleShape2D" id="53"]
-size = Vector2(64, 64)
-
-[sub_resource type="AnimationNodeAnimation" id="43"]
-animation = &"damage_left"
-
-[sub_resource type="AnimationNodeAnimation" id="44"]
-animation = &"damage_right"
-
-[sub_resource type="AnimationNodeBlendSpace1D" id="45"]
-blend_point_0/node = SubResource("43")
-blend_point_0/pos = -0.000141557
-blend_point_1/node = SubResource("44")
-blend_point_1/pos = 0.000121335
-min_space = -0.01
-max_space = 0.01
-snap = 0.01
+size = Vector2(480, 480)
 
 [sub_resource type="AnimationNodeAnimation" id="68"]
 animation = &"idle_left"
@@ -59,16 +43,9 @@ blend_point_1/node = SubResource("59")
 blend_point_1/pos = 0.01
 snap = 0.01
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="62"]
-
 [sub_resource type="AnimationNodeStateMachineTransition" id="71"]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="72"]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="73"]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="74"]
-switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_wgnco"]
 advance_mode = 2
@@ -76,16 +53,14 @@ advance_mode = 2
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_guhil"]
 
 [sub_resource type="AnimationNodeStateMachine" id="39"]
-states/End/position = Vector2(411.73, 218)
+states/End/position = Vector2(411.73, 248.5)
 states/Start/position = Vector2(210, 134.5)
-states/damage/node = SubResource("45")
-states/damage/position = Vector2(608, 80)
 states/idle/node = SubResource("70")
 states/idle/position = Vector2(411.336, 140)
 states/walk/node = SubResource("60")
 states/walk/position = Vector2(412.125, 35)
-transitions = ["walk", "damage", SubResource("62"), "idle", "walk", SubResource("71"), "walk", "idle", SubResource("72"), "idle", "damage", SubResource("73"), "damage", "idle", SubResource("74"), "Start", "idle", SubResource("AnimationNodeStateMachineTransition_wgnco"), "idle", "End", SubResource("AnimationNodeStateMachineTransition_guhil")]
-graph_offset = Vector2(82, 30)
+transitions = ["idle", "walk", SubResource("71"), "walk", "idle", SubResource("72"), "Start", "idle", SubResource("AnimationNodeStateMachineTransition_wgnco"), "idle", "End", SubResource("AnimationNodeStateMachineTransition_guhil")]
+graph_offset = Vector2(82, -66.2288)
 
 [sub_resource type="AnimationNodeBlendTree" id="40"]
 nodes/state_machine/node = SubResource("39")
@@ -99,45 +74,9 @@ radius = 158.474
 collision_layer = 2
 collision_mask = 13
 script = ExtResource("2")
-speed_max = 300.0
-speed_min = 60.0
+speed_max = 600.0
+speed_min = 120.0
 accerelation = 360.0
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-visible = false
-position = Vector2(0, -91)
-scale = Vector2(-1, 1)
-sprite_frames = ExtResource("2_h16co")
-animation = &"idle_right"
-
-[node name="PlayerHit" type="Area2D" parent="AnimatedSprite2D"]
-modulate = Color(1, 0, 0, 1)
-position = Vector2(0, 91)
-collision_layer = 16
-collision_mask = 0
-monitoring = false
-script = ExtResource("20")
-
-[node name="Hit" type="CollisionShape2D" parent="AnimatedSprite2D/PlayerHit"]
-position = Vector2(0, -72)
-shape = SubResource("14")
-
-[node name="UntieArea" type="Area2D" parent="AnimatedSprite2D"]
-modulate = Color(0.129412, 0.835294, 0.94902, 1)
-position = Vector2(64, 0)
-collision_layer = 0
-collision_mask = 8
-monitorable = false
-script = ExtResource("20")
-
-[node name="Hit" type="CollisionShape2D" parent="AnimatedSprite2D/UntieArea"]
-shape = SubResource("53")
-
-[node name="Body2" type="AnimatedSprite2D" parent="."]
-visible = false
-position = Vector2(-7, -416)
-sprite_frames = ExtResource("7_bv6r5")
-animation = &"idle_front"
 
 [node name="Body" type="AnimatedSprite2D" parent="."]
 position = Vector2(-7, -416)
@@ -157,16 +96,38 @@ position = Vector2(-22, -462)
 sprite_frames = ExtResource("8_hqy4g")
 animation = &"front"
 
-[node name="Arm" type="Node2D" parent="."]
-position = Vector2(11, -74)
-rotation = 3.14159
-scale = Vector2(1, -1)
+[node name="ArmPivot" type="Node2D" parent="Body"]
+position = Vector2(-78, -271)
 
-[node name="Shooter" parent="Arm" instance=ExtResource("18")]
+[node name="ArmPivot" type="Node2D" parent="."]
+position = Vector2(-131, -538)
+
+[node name="Shooter" parent="ArmPivot" instance=ExtResource("18")]
 position = Vector2(94, 0)
 script = ExtResource("19")
 rate = 5.0
 pivot_node_path = NodePath("..")
+
+[node name="PlayerHit" type="Area2D" parent="."]
+modulate = Color(1, 0, 0, 1)
+collision_layer = 16
+collision_mask = 0
+monitoring = false
+script = ExtResource("20")
+
+[node name="Hit" type="CollisionShape2D" parent="PlayerHit"]
+position = Vector2(2.08165e-12, -360)
+shape = SubResource("14")
+
+[node name="UntieArea" type="Area2D" parent="."]
+modulate = Color(0.129412, 0.835294, 0.94902, 1)
+collision_layer = 0
+collision_mask = 8
+monitorable = false
+script = ExtResource("20")
+
+[node name="Hit" type="CollisionShape2D" parent="UntieArea"]
+shape = SubResource("53")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -180,7 +141,6 @@ libraries = {
 }
 tree_root = SubResource("40")
 anim_player = NodePath("../AnimationPlayer")
-parameters/state_machine/damage/blend_position = -0.000565584
 parameters/state_machine/idle/blend_position = -0.00749999
 parameters/state_machine/walk/blend_position = -0.00962698
 
