@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://bbx8d8f0hd4x6"]
+
+[ext_resource type="Script" path="res://world/maps/Map.gd" id="1_hlhjt"]
+[ext_resource type="Texture2D" uid="uid://r3phufe5ipo" path="res://ui/start/images/BG.png" id="2_y4x8i"]
+[ext_resource type="Script" path="res://components/camera/GameCamera.gd" id="3_b6jfj"]
+[ext_resource type="PackedScene" uid="uid://c10ul1m7yn577" path="res://player/Player.tscn" id="4_pcks7"]
+
+[node name="Map" type="Node2D"]
+script = ExtResource("1_hlhjt")
+
+[node name="InfiniteBg" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="InfiniteBg"]
+motion_mirroring = Vector2(1920, 1080)
+
+[node name="Bg" type="Sprite2D" parent="InfiniteBg/ParallaxLayer"]
+texture = ExtResource("2_y4x8i")
+centered = false
+
+[node name="GameCamera" type="Camera2D" parent="."]
+position = Vector2(518, 306)
+zoom = Vector2(0.25, 0.25)
+position_smoothing_enabled = true
+position_smoothing_speed = 20.0
+script = ExtResource("3_b6jfj")
+target_path = NodePath("../Entities/Player")
+
+[node name="Entities" type="Node2D" parent="."]
+
+[node name="Player" parent="Entities" instance=ExtResource("4_pcks7")]
+position = Vector2(164, 452)
+
+[node name="World" type="Node2D" parent="Entities"]
