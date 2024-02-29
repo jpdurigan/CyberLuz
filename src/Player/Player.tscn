@@ -63,6 +63,7 @@ transitions = ["idle", "walk", SubResource("71"), "walk", "idle", SubResource("7
 graph_offset = Vector2(82, -66.2288)
 
 [sub_resource type="AnimationNodeBlendTree" id="40"]
+graph_offset = Vector2(0, -5.5)
 nodes/state_machine/node = SubResource("39")
 nodes/state_machine/position = Vector2(-30, 120)
 node_connections = [&"output", 0, &"state_machine"]
@@ -135,7 +136,6 @@ libraries = {
 }
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-active = false
 libraries = {
 "": ExtResource("9_cswbi")
 }
