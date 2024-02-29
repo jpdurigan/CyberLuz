@@ -30,8 +30,7 @@ script = ExtResource("3_oauq0")
 [node name="GameCamera" type="Camera2D" parent="."]
 position = Vector2(518, 306)
 zoom = Vector2(0.25, 0.25)
-position_smoothing_enabled = true
-position_smoothing_speed = 20.0
+position_smoothing_speed = 200.0
 script = ExtResource("3_b6jfj")
 target_path = NodePath("../Entities/Player")
 

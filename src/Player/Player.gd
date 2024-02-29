@@ -6,9 +6,12 @@ const ANIM_IDLE_BLEND_POSITION = "parameters/state_machine/idle/blend_position"
 #const ANIM_DAMAGE_BLEND_POSITION = "parameters/state_machine/damage/blend_position"
 const ANIM_STATE_MACHINE_PLAYBACK = "parameters/state_machine/playback"
 
+@export_group("Movement")
 @export var speed_max: float = 150.0 # (float, 0.0, 500.0, 10.0)
 @export var speed_min: float = 30.0 # (float, 0.0, 500.0, 10.0)
 @export var accerelation: float = 100.0 # (float, 0.0, 500.0, 10.0)
+
+@export_group("Health")
 @export var life_max: float = 100.0 # (float, 0.0, 250.0, 10.0)
 
 var _speed_current: float
