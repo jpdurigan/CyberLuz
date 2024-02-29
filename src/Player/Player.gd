@@ -20,7 +20,7 @@ var _life_current: float
 @onready var _animation_tree: AnimationTree = $AnimationTree
 @onready var _animation_state_machine: AnimationNodeStateMachinePlayback = _animation_tree.get(ANIM_STATE_MACHINE_PLAYBACK)
 
-@onready var _shooter: Shooter = $ArmPivot/Shooter
+@onready var _shooter: Shooter = $Body/ArmPivot/Arm/Shooter
 @onready var _untie_area: Area2D = $UntieArea
 
 func _ready():

@@ -63,7 +63,6 @@ transitions = ["idle", "walk", SubResource("71"), "walk", "idle", SubResource("7
 graph_offset = Vector2(82, -66.2288)
 
 [sub_resource type="AnimationNodeBlendTree" id="40"]
-graph_offset = Vector2(0, -5.5)
 nodes/state_machine/node = SubResource("39")
 nodes/state_machine/position = Vector2(-30, 120)
 node_connections = [&"output", 0, &"state_machine"]
@@ -84,12 +83,22 @@ position = Vector2(-7, -416)
 sprite_frames = ExtResource("7_bv6r5")
 animation = &"idle_front"
 
-[node name="Arm" type="AnimatedSprite2D" parent="Body"]
+[node name="ArmPivot" type="Node2D" parent="Body"]
 visible = false
 position = Vector2(-124, -122)
+
+[node name="Arm" type="AnimatedSprite2D" parent="Body/ArmPivot"]
+position = Vector2(9, 326)
+rotation = -1.64934
 sprite_frames = ExtResource("8_8oa1r")
 animation = &"front"
-offset = Vector2(-15, 236)
+offset = Vector2(-16, 236)
+
+[node name="Shooter" parent="Body/ArmPivot/Arm" instance=ExtResource("18")]
+position = Vector2(-45, 420)
+script = ExtResource("19")
+rate = 5.0
+pivot_node_path = NodePath("../..")
 
 [node name="Head" type="AnimatedSprite2D" parent="Body"]
 visible = false
@@ -97,19 +106,8 @@ position = Vector2(-22, -462)
 sprite_frames = ExtResource("8_hqy4g")
 animation = &"front"
 
-[node name="ArmPivot" type="Node2D" parent="Body"]
-position = Vector2(-78, -271)
-
-[node name="ArmPivot" type="Node2D" parent="."]
-position = Vector2(-131, -538)
-
-[node name="Shooter" parent="ArmPivot" instance=ExtResource("18")]
-position = Vector2(94, 0)
-script = ExtResource("19")
-rate = 5.0
-pivot_node_path = NodePath("..")
-
 [node name="PlayerHit" type="Area2D" parent="."]
+visible = false
 modulate = Color(1, 0, 0, 1)
 collision_layer = 16
 collision_mask = 0
@@ -121,6 +119,7 @@ position = Vector2(2.08165e-12, -360)
 shape = SubResource("14")
 
 [node name="UntieArea" type="Area2D" parent="."]
+visible = false
 modulate = Color(0.129412, 0.835294, 0.94902, 1)
 collision_layer = 0
 collision_mask = 8
